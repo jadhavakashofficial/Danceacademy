@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
   images: {
-    domains: ['sanchaykathak.com'],
+    unoptimized: true, // ✅ Disable Image Optimization for static export
     remotePatterns: [
       {
         protocol: 'https',
@@ -10,14 +11,17 @@ const nextConfig = {
         port: '',
         pathname: '/cms/wp-content/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdnjs.cloudflare.com',
+        port: '',
+        pathname: '/**',
+      }
     ],
   },
-}
-
-module.exports = nextConfig
-
-module.exports = {
   eslint: {
     ignoreDuringBuilds: true,
   },
 };
+
+module.exports = nextConfig;
