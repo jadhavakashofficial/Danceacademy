@@ -409,7 +409,7 @@ export default function Home() {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-stretch">
       
       {/* Content Section - Adjusted with negative top margin */}
-      <div className="flex flex-col justify-center space-y-6 md:space-y-8 z-10 pt-4 md:-mt-5"> {/* Added negative top margin */}
+      <div className="flex flex-col justify-center space-y-6 md:space-y-8 z-10 -mt-5"> {/* Added negative top margin */}
         <div className="space-y-6 md:space-y-8">
           {/* Animated heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-[#0C1B33] animate-fadeInUp" style={{ fontFamily: 'Playfair Display, serif' }}>
@@ -434,7 +434,7 @@ export default function Home() {
             {[
               {title: "Established 1990", icon: "🏛️"},
               {title: "35+ Years Excellence", icon: "🌟"}, 
-              {title: "3 Major Gharanas", icon: "💃"}, 
+              {title: "2 Major Gharanas", icon: "💃"}, 
               {title: "Global Recognition", icon: "🌎"}
             ].map((item, index) => (
               <div 
@@ -490,7 +490,7 @@ export default function Home() {
             <div className="absolute inset-0 border-4 border-white/80 rounded-2xl z-20 pointer-events-none"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
             <Image
-              src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1000926106.jpg"
+              src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/FB_IMG_1705643899597.jpg"
               alt="Kathak Performer"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -712,8 +712,7 @@ export default function Home() {
               {[
                 {value: "35+", label: "Years of service", color: "#C73664", icon: "🕰️"},
                 {value: "30+", label: "Visharad graduates", color: "#00A3A3", icon: "🎓"},
-                {value: "2", label: "Alankar achievers", color: "#B300B3", icon: "🏆"},
-                {value: "20+", label: "Global performances", color: "#0C1B33", icon: "🌎"}
+                {value: "4+", label: "Prestigious Affiliations", color: "#0C1B33", icon: "🏛️"}
               ].map((stat, index) => (
                 <div 
                   key={index}
@@ -1029,10 +1028,7 @@ export default function Home() {
               </li>
             </ul>
             
-            <div className="bg-gradient-to-r from-white to-[#FFF5ED] p-4 rounded-xl border-l-4 border-[#C73664] text-xs shadow-inner group-hover:shadow-lg transition-shadow duration-300">
-              <h4 className="font-bold text-[#C73664] mb-1">Currently training under:</h4>
-              <p className="font-bold text-[#0C1B33]">Pt. Rajendra Gangani Ji</p>
-            </div>
+            
           </div>
         </div>
         
@@ -1641,354 +1637,7 @@ export default function Home() {
   `}</style>
 </section>
 
-     <section 
-  className="py-12 relative overflow-hidden"
-  style={{ 
-    background: 'linear-gradient(135deg, #fef7f0 0%, #fdf2f8 25%, #f0f9ff 50%, #f8fafc 75%, #ffffff 100%)',
-    backgroundSize: '400% 400%',
-    animation: 'gradientShift 15s ease-in-out infinite'
-  }}
->
-  {/* Light Dynamic Pattern Background */}
-  <div className="absolute inset-0">
-    {/* Soft animated gradient mesh */}
-    <div 
-      className="absolute inset-0 opacity-10"
-      style={{
-        background: `
-          radial-gradient(circle at 20% 50%, rgba(199, 54, 100, 0.08) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(0, 163, 163, 0.06) 0%, transparent 50%),
-          radial-gradient(circle at 40% 80%, rgba(179, 0, 179, 0.05) 0%, transparent 50%),
-          linear-gradient(45deg, rgba(255, 215, 0, 0.04) 0%, transparent 70%)
-        `,
-        backgroundSize: '300% 300%, 250% 250%, 200% 200%, 400% 400%',
-        animation: 'meshFloat 20s ease-in-out infinite'
-      }}
-    ></div>
-    
-    {/* Subtle geometric pattern overlay */}
-    <div 
-      className="absolute inset-0 opacity-3"
-      style={{
-        backgroundImage: `
-          linear-gradient(30deg, rgba(199, 54, 100, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(199, 54, 100, 0.05) 87.5%),
-          linear-gradient(150deg, rgba(0, 163, 163, 0.05) 12%, transparent 12.5%, transparent 87%, rgba(0, 163, 163, 0.05) 87.5%)
-        `,
-        backgroundSize: '100px 100px',
-        animation: 'patternShift 25s linear infinite'
-      }}
-    ></div>
-    
-    {/* Soft floating orbs */}
-    {[...Array(5)].map((_, i) => (
-      <div 
-        key={i}
-        className="absolute rounded-full blur-2xl opacity-8"
-        style={{
-          width: `${80 + i * 30}px`,
-          height: `${80 + i * 30}px`,
-          background: `linear-gradient(135deg, ${['#C73664', '#00A3A3', '#B300B3', '#FFD700', '#0C1B33'][i]}15, transparent)`,
-          top: `${15 + i * 18}%`,
-          left: `${5 + i * 22}%`,
-          animation: `float ${10 + i * 3}s ease-in-out infinite ${i * 2}s`
-        }}
-      ></div>
-    ))}
-  </div>
-
-  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-    {/* Enhanced Header */}
-    <div className="text-center mb-16">
-      <div className="inline-block relative mb-6">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#C73664]/8 via-[#B300B3]/6 to-[#00A3A3]/8 rounded-full blur-lg animate-pulse-slow"></div>
-        <span className="relative inline-block px-8 py-3 bg-white/80 backdrop-blur-xl text-[#C73664] rounded-full text-sm font-bold uppercase tracking-[0.2em] border border-[#C73664]/15 shadow-xl transform transition-all duration-300 hover:scale-105">
-          Learning Programs
-        </span>
-      </div>
-      
-      <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-        <span className="block text-2xl md:text-3xl mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#C73664] via-[#B300B3] to-[#00A3A3] animate-shimmer">
-          Structured Learning for
-        </span>
-        <span className="text-[#0C1B33] relative">
-          Every Level
-          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-[#C73664] via-[#B300B3] to-[#00A3A3] rounded-full animate-gradient-pulse"></div>
-        </span>
-      </h2>
-      
-      <p className="text-lg text-[#2E2E2E] max-w-2xl mx-auto leading-relaxed font-light">
-        Comprehensive programs tailored for students of all ages and expertise levels
-      </p>
-    </div>
-
-    {/* Elegant Program Display */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-8">
-      {[
-        {
-          level: 'Beginners',
-          title: 'Foundation Course',
-          duration: '6-12 Months',
-          icon: '🌱',
-          bgColor: 'rgba(199, 54, 100, 0.05)',
-          borderColor: '#C73664',
-          accentColor: '#C73664',
-          features: [
-            'Basic stance and posture',
-            'Simple rhythmic patterns',
-            'Introduction to Gharanas',
-            'Cultural appreciation',
-            'Performance readiness'
-          ]
-        },
-        {
-          level: 'Intermediate',
-          title: 'Skill Development',
-          duration: '12-24 Months',
-          icon: '🎭',
-          bgColor: 'rgba(0, 163, 163, 0.05)',
-          borderColor: '#00A3A3',
-          accentColor: '#00A3A3',
-          features: [
-            'Complex footwork patterns',
-            'Abhinaya expressions',
-            'Traditional compositions',
-            'Stage performance',
-            'Music coordination'
-          ]
-        },
-        {
-          level: 'Advanced',
-          title: 'Mastery Program',
-          duration: '2-4 Years',
-          icon: '👑',
-          bgColor: 'rgba(179, 0, 179, 0.05)',
-          borderColor: '#B300B3',
-          accentColor: '#B300B3',
-          features: [
-            'Advanced choreography',
-            'Teaching methodology',
-            'Competition preparation',
-            'Professional performances',
-            'Certification pathway'
-          ]
-        },
-        {
-          level: 'Special',
-          title: 'Specialized Training',
-          duration: 'Flexible',
-          icon: '✨',
-          bgColor: 'rgba(12, 27, 51, 0.05)',
-          borderColor: '#0C1B33',
-          accentColor: '#0C1B33',
-          features: [
-            'Adult learning programs',
-            'Corporate workshops',
-            'Therapeutic dance',
-            'Cultural events',
-            'Custom curricula'
-          ]
-        }
-      ].map((program, index) => (
-        <div 
-          key={index}
-          className="group relative"
-          style={{ 
-            animationDelay: `${index * 150}ms`,
-            animation: 'slideInUp 0.8s ease-out forwards'
-          }}
-        >
-          {/* Card subtle glow effect */}
-          <div 
-            className="absolute -inset-1 rounded-3xl opacity-0 group-hover:opacity-30 transition-all duration-500 blur-lg"
-            style={{ backgroundColor: program.accentColor + '20' }}
-          ></div>
-          
-          {/* Main card */}
-          <div 
-            className="relative backdrop-blur-sm border-2 rounded-3xl p-8 h-full transform transition-all duration-400 group-hover:scale-102 group-hover:-translate-y-2 shadow-lg group-hover:shadow-2xl"
-            style={{ 
-              backgroundColor: program.bgColor,
-              borderColor: program.borderColor + '20'
-            }}
-          >
-            
-            {/* Enhanced shimmer effect on hover */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 rounded-3xl"></div>
-            
-            {/* Level indicator and icon */}
-            <div className="flex items-center justify-between mb-6">
-              <span 
-                className="inline-block px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-white shadow-md transform transition-all duration-300 group-hover:scale-105"
-                style={{ backgroundColor: program.accentColor }}
-              >
-                {program.level}
-              </span>
-              <div 
-                className="w-14 h-14 rounded-2xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-md relative overflow-hidden"
-                style={{ backgroundColor: program.accentColor + '15' }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="text-2xl filter drop-shadow-sm relative z-10 transition-transform duration-300 group-hover:scale-110">
-                  {program.icon}
-                </span>
-              </div>
-            </div>
-            
-            {/* Program details */}
-            <div className="mb-6">
-              <h3 
-                className="text-xl font-bold mb-2 transition-all duration-300 group-hover:opacity-80 group-hover:tracking-wide"
-                style={{ color: program.accentColor }}
-              >
-                {program.title}
-              </h3>
-              <p className="text-[#2E2E2E] text-sm font-medium opacity-70 group-hover:opacity-90 transition-opacity duration-300">
-                Duration: {program.duration}
-              </p>
-            </div>
-            
-            {/* Features list */}
-            <ul className="space-y-3 mb-6">
-              {program.features.map((feature, idx) => (
-                <li key={idx} className="flex items-start group/item">
-                  <div 
-                    className="flex-shrink-0 w-2 h-2 rounded-full mt-2 mr-3 group-hover/item:scale-125 transition-all duration-300"
-                    style={{ backgroundColor: program.accentColor }}
-                  ></div>
-                  <span className="text-[#2E2E2E] text-sm leading-relaxed group-hover:text-[#0C1B33] transition-all duration-300 group-hover:translate-x-1">
-                    {feature}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            
-            {/* Floating micro-elements */}
-            <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
-              <div 
-                className="w-2 h-2 rounded-full animate-ping"
-                style={{ backgroundColor: program.accentColor }}
-              ></div>
-            </div>
-            
-            {/* Enhanced bottom accent line */}
-            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 rounded-full">
-              <div 
-                className="w-0 h-full rounded-full transition-all duration-700 group-hover:w-full"
-                style={{ backgroundColor: program.accentColor }}
-              ></div>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    {/* Simplified Call-to-Action */}
-    <div className="text-center mt-20">
-      <h3 className="text-2xl font-bold text-[#0C1B33] mb-4">
-        Ready to Begin Your Kathak Journey?
-      </h3>
-      <p className="text-[#2E2E2E] max-w-md mx-auto leading-relaxed">
-        Join thousands of students who have transformed their passion into expertise with our structured learning approach
-      </p>
-      
-      {/* Color dots indicating program levels */}
-      <div className="flex justify-center items-center space-x-4 mt-8">
-        <div className="w-3 h-3 rounded-full bg-[#C73664] animate-pulse"></div>
-        <div className="w-3 h-3 rounded-full bg-[#00A3A3] animate-pulse animation-delay-1000"></div>
-        <div className="w-3 h-3 rounded-full bg-[#B300B3] animate-pulse animation-delay-2000"></div>
-        <div className="w-3 h-3 rounded-full bg-[#0C1B33] animate-pulse animation-delay-3000"></div>
-      </div>
-    </div>
-  </div>
-
-  <style jsx>{`
-    @keyframes gradientShift {
-      0%, 100% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-    }
-    
-    @keyframes meshFloat {
-      0%, 100% {
-        background-position: 0% 0%, 100% 100%, 50% 50%, 0% 100%;
-      }
-      25% {
-        background-position: 15% 10%, 85% 90%, 70% 30%, 10% 90%;
-      }
-      50% {
-        background-position: 30% 20%, 70% 80%, 90% 10%, 20% 80%;
-      }
-      75% {
-        background-position: 45% 30%, 55% 70%, 10% 90%, 30% 70%;
-      }
-    }
-    
-    @keyframes patternShift {
-      0% {
-        transform: translateX(0) translateY(0);
-      }
-      100% {
-        transform: translateX(100px) translateY(100px);
-      }
-    }
-    
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0px) translateX(0px) scale(1);
-      }
-      33% {
-        transform: translateY(-15px) translateX(8px) scale(1.02);
-      }
-      66% {
-        transform: translateY(-8px) translateX(-8px) scale(0.98);
-      }
-    }
-    
-    @keyframes shimmer {
-      0% {
-        background-position: -200% center;
-      }
-      100% {
-        background-position: 200% center;
-      }
-    }
-    
-    @keyframes slideInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .animate-shimmer {
-      background-size: 200% auto;
-      animation: shimmer 4s linear infinite;
-    }
-    
-    .scale-102 {
-      transform: scale(1.02);
-    }
-    
-    .animation-delay-1000 {
-      animation-delay: 1s;
-    }
-    
-    .animation-delay-2000 {
-      animation-delay: 2s;
-    }
-    
-    .animation-delay-3000 {
-      animation-delay: 3s;
-    }
-  `}</style>
-</section>
+     
 
 <section 
   className="py-16 relative overflow-hidden"
