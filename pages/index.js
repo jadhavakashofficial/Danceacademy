@@ -409,7 +409,7 @@ export default function Home() {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-stretch">
       
       {/* Content Section - Adjusted with negative top margin */}
-      <div className="flex flex-col justify-center space-y-6 md:space-y-8 z-10 -mt-5"> {/* Added negative top margin */}
+      <div className="flex flex-col justify-center space-y-6 md:space-y-8 z-10 pt-4 md:-mt-5"> {/* Added negative top margin */}
         <div className="space-y-6 md:space-y-8">
           {/* Animated heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-[#0C1B33] animate-fadeInUp" style={{ fontFamily: 'Playfair Display, serif' }}>
