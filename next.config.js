@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
-    domains: ['sanchaykathak.com'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -10,14 +12,15 @@ const nextConfig = {
         port: '',
         pathname: '/cms/wp-content/uploads/**',
       },
+      // Add any other external image domains you might use
+      {
+        protocol: 'https',
+        hostname: 'cdnjs.cloudflare.com',
+        port: '',
+        pathname: '/**',
+      }
     ],
   },
 }
 
 module.exports = nextConfig
-
-module.exports = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-};
