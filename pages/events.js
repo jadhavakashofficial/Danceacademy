@@ -41,6 +41,7 @@ export default function Events() {
         "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/2430-scaled.jpg"
       ]
     },
+<<<<<<< HEAD
     {
       id: 2,
       title: "Bharat Ratna Pandit Bhimsen Joshi Mahotsav",
@@ -71,6 +72,9 @@ export default function Events() {
         "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1750240970773.png"
       ]
     },
+=======
+
+>>>>>>> fix-branch
     {
       id: 3,
       title: "International Kathak Festival - Europe Tour",
@@ -83,7 +87,11 @@ export default function Events() {
       image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1739429006284.jpeg",
       description: "A remarkable journey across Europe showcasing authentic Kathak to international audiences, promoting cultural exchange and artistic diplomacy.",
       highlights: [
+<<<<<<< HEAD
         "4 country European tour",
+=======
+        "6 country European tour",
+>>>>>>> fix-branch
         "Cultural exchange program",
         "International audience engagement",
         "Diplomatic cultural mission",
@@ -91,7 +99,11 @@ export default function Events() {
       ],
       details: {
         duration: "2 Weeks",
+<<<<<<< HEAD
         participants: "15 Artists",
+=======
+        participants: "Solo",
+>>>>>>> fix-branch
         audience: "20,000+ International Viewers",
         significance: "Global Cultural Ambassador"
       },

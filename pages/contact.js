@@ -176,8 +176,13 @@ ${formData.message}
   const branches = [
     {
       id: 1,
+<<<<<<< HEAD
       name: "Main Branch - Chinchwad",
       address: "Sanchay Kathak Nrutya Academy, Chinchwad, Pune, Maharashtra - India",
+=======
+      name: "Main Branch ",
+      address: "Sanchay Kathak Nrutya Academy, Pune, Maharashtra - India",
+>>>>>>> fix-branch
       icon: "🏛️",
       color: "#C73664",
       isMain: true

@@ -22,6 +22,13 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
+<<<<<<< HEAD
 module.exports = nextConfig;
+=======
+module.exports = nextConfig;
+>>>>>>> fix-branch

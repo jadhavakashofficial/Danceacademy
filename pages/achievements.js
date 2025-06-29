@@ -133,7 +133,11 @@ export default function Achievements() {
     {
       id: 3,
       title: "Premier Institution Affiliations",
+<<<<<<< HEAD
       description: "ABGMV, Tilak Maharashtra Vidyapeeth, Dr. D.Y. Patil College",
+=======
+      description: "ABGMV, Tilak Maharashtra Vidyapeeth, Dr. D.Y. Patil College,Lalit Kala Kendra Pune Univercity",
+>>>>>>> fix-branch
       icon: "🏛️",
       color: "#00A3A3",
       count: "4+",
