@@ -41,36 +41,7 @@ export default function Events() {
         "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/2430-scaled.jpg"
       ]
     },
-    {
-      id: 2,
-      title: "Bharat Ratna Pandit Bhimsen Joshi Mahotsav",
-      subtitle: "Tribute to Classical Music Legend",
-      date: "2024",
-      location: "Maharashtra",
-      status: "completed",
-      category: "classical",
-      type: "National Festival",
-      image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1750233481334.png",
-      description: "A magnificent tribute to the legendary Pandit Bhimsen Joshi, featuring classical dance and music performances celebrating India's artistic heritage.",
-      highlights: [
-        "Tribute to Bharat Ratna Pandit Bhimsen Joshi",
-        "Classical music and dance fusion",
-        "National level participation",
-        "Traditional Raag-based choreography",
-        "Cultural unity celebration"
-      ],
-      details: {
-        duration: "2 Days",
-        participants: "200+ Artists",
-        audience: "5,000+ Music Lovers",
-        significance: "Classical Arts Preservation"
-      },
-      gallery: [
-        "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1750233481334.png",
-        "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1750233828980.png",
-        "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1750240970773.png"
-      ]
-    },
+
     {
       id: 3,
       title: "International Kathak Festival - Europe Tour",
@@ -83,7 +54,7 @@ export default function Events() {
       image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1739429006284.jpeg",
       description: "A remarkable journey across Europe showcasing authentic Kathak to international audiences, promoting cultural exchange and artistic diplomacy.",
       highlights: [
-        "4 country European tour",
+        "6 country European tour",
         "Cultural exchange program",
         "International audience engagement",
         "Diplomatic cultural mission",
@@ -91,7 +62,7 @@ export default function Events() {
       ],
       details: {
         duration: "2 Weeks",
-        participants: "15 Artists",
+        participants: "Solo",
         audience: "20,000+ International Viewers",
         significance: "Global Cultural Ambassador"
       },

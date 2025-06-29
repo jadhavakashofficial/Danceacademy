@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function Reviews() {
   const canvasRef = useRef(null);
   const [activeTab, setActiveTab] = useState('digital');
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   // Print Media Images from the provided code
@@ -15,10 +14,32 @@ export default function Reviews() {
     'https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20250305-WA0030.jpg',
     'https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20231007-WA0047.jpg',
     'https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20230412-WA0087.jpg',
+    'https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG_20240720_131132_031.webp',
     'https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20190903-WA0000.jpg',
     'https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20191005-WA0038.jpg',
-    'https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG_20230713_145409_280.webp',
-    'https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20230412-WA0087.jpg',
+    'https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG_20230713_145409_280.webp'
+  ];
+
+  // Print Media Titles
+  const printMediaTitles = [
+    "Cultural Recognition Award",
+    "International Performance",
+    "Excellence in Arts Award",
+    "Media Coverage Feature",
+    "Traditional Festival Performance",
+    "Achievement Recognition",
+    "Student Success Story"
+  ];
+
+  // Print Media Descriptions = [
+  const printMediaDescriptions = [
+    "Prestigious honor for cultural preservation",
+    "Global stage recognition",
+    "Outstanding contribution to dance",
+    "National television highlight",
+    "Cultural celebration showcase",
+    "Distinguished service award",
+    "Competition victory celebration"
   ];
 
   // Digital Media Reviews
@@ -191,23 +212,6 @@ export default function Reviews() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Auto-play slider
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % printMediaImages.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [printMediaImages.length]);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % printMediaImages.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + printMediaImages.length) % printMediaImages.length);
-  };
-
   const renderStars = (rating) => {
     return [...Array(5)].map((_, i) => (
       <motion.span
@@ -372,6 +376,98 @@ export default function Reviews() {
             width: 100%;
             height: 100%;
             max-height: 600px;
+          }
+          
+          /* New slider styles from provided code */
+          @keyframes slideShow {
+            0%, 12% { transform: translateX(0%); }
+            14%, 26% { transform: translateX(-14.285%); }
+            28%, 40% { transform: translateX(-28.571%); }
+            42%, 54% { transform: translateX(-42.857%); }
+            56%, 68% { transform: translateX(-57.143%); }
+            70%, 82% { transform: translateX(-71.429%); }
+            84%, 96% { transform: translateX(-85.714%); }
+            98%, 100% { transform: translateX(0%); }
+          }
+          
+          .media-slider-container {
+            position: relative;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height: 380px; /* Fixed height */
+          }
+
+          .media-slider-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.75rem;
+          }
+
+          .media-slider {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 700%; /* 7 slides x 100% */
+            height: 100%;
+            animation: slideShow 35s infinite;
+          }
+
+          .media-slide {
+            position: relative;
+            width: calc(100% / 7); /* Each slide takes 1/7 of total width */
+            height: 100%;
+            transition: all 0.8s ease;
+            transform-origin: center;
+          }
+
+          /* Hover pause animation */
+          .media-slider-container:hover .media-slider {
+            animation-play-state: paused;
+          }
+
+          /* Slider controls hover effect */
+          .slider-prev:hover, .slider-next:hover {
+            transform: scale(1.15);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+          }
+
+          .slider-prev {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            z-index: 20;
+          }
+
+          .slider-next {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            z-index: 20;
+          }
+
+          /* Slider dot hover effect */
+          .slider-dot:hover {
+            transform: scale(1.3);
+            background: linear-gradient(to right, #C73664, #B300B3);
+          }
+
+          /* Responsive adjustments */
+          @media (max-width: 768px) {
+            .media-slider-container {
+              height: 320px;
+            }
+            
+            .slider-prev, .slider-next {
+              width: 32px;
+              height: 32px;
+              font-size: 0.875rem;
+            }
           }
         `}</style>
       </Head>
@@ -717,120 +813,131 @@ export default function Reviews() {
                   Print Media Coverage
                 </motion.h3>
 
-                {/* Image Slider */}
-                <div className="relative max-w-6xl mx-auto">
-                  <div className="gradient-border">
-                    <div className="gradient-border-inner">
-                      <div className="relative bg-white rounded-2xl overflow-hidden" style={{ minHeight: '600px' }}>
-                        <AnimatePresence mode="wait">
-                          <motion.div
-                            key={currentSlide}
-                            className="absolute inset-0 flex items-center justify-center p-8"
-                            initial={{ opacity: 0, x: 300 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -300 }}
-                            transition={{ duration: 0.5, type: "spring", stiffness: 100 }}
-                          >
-                            <img
-                              src={printMediaImages[currentSlide]}
-                              alt={`Print media coverage ${currentSlide + 1}`}
-                              className="slider-image"
-                            />
-                          </motion.div>
-                        </AnimatePresence>
-
-                        {/* Navigation Buttons */}
-                        <button
-                          onClick={prevSlide}
-                          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-md p-4 rounded-full shadow-2xl hover:bg-white hover:scale-110 transition-all group"
-                        >
-                          <svg className="w-6 h-6 text-[#FF6B6B] group-hover:text-[#FFD700] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                          </svg>
+                {/* Enhanced Media Coverage Slider */}
+                <div className="relative">
+                  {/* Media coverage card */}
+                  <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl p-6 border border-white/50 overflow-hidden">
+                    
+                    {/* Header */}
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center">
+                        <div className="w-12 h-12 bg-gradient-to-r from-[#00A3A3] to-[#00FFF7] rounded-xl flex items-center justify-center mr-4 shadow-lg transform transition-all duration-300 hover:scale-110 hover:rotate-6">
+                          <span className="text-xl">📰</span>
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-[#0C1B33] mb-1">Print Media Coverage</h3>
+                          <p className="text-[#2E2E2E] text-sm">Featured in news and cultural platforms</p>
+                        </div>
+                      </div>
+                      
+                      {/* Enhanced slider controls */}
+                      <div className="flex space-x-2">
+                        <button className="slider-prev w-9 h-9 bg-gradient-to-r from-[#C73664] to-[#B300B3] rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300">
+                          <span className="text-sm">‹</span>
                         </button>
-
-                        <button
-                          onClick={nextSlide}
-                          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-md p-4 rounded-full shadow-2xl hover:bg-white hover:scale-110 transition-all group"
-                        >
-                          <svg className="w-6 h-6 text-[#FF6B6B] group-hover:text-[#FFD700] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
+                        <button className="slider-next w-9 h-9 bg-gradient-to-r from-[#00A3A3] to-[#00FFF7] rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300">
+                          <span className="text-sm">›</span>
                         </button>
+                      </div>
+                    </div>
 
-                        {/* Slide Indicators */}
-                        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3">
-                          {printMediaImages.map((_, index) => (
-                            <motion.button
-                              key={index}
-                              onClick={() => setCurrentSlide(index)}
-                              className={`transition-all ${
-                                currentSlide === index 
-                                  ? 'bg-gradient-to-r from-[#FFD700] to-[#FF6B6B] w-12 h-3' 
-                                  : 'bg-white/50 hover:bg-white/70 w-3 h-3'
-                              } rounded-full`}
-                              whileHover={{ scale: 1.2 }}
-                              whileTap={{ scale: 0.9 }}
-                            />
+                    {/* Premium Image Slider - Fixed Structure */}
+                    <div className="media-slider-container relative overflow-hidden rounded-xl mb-5 h-[380px] bg-[#0C1B33]/5">
+                      <div className="media-slider-wrapper w-full h-full overflow-hidden">
+                        <div className="media-slider flex h-full transition-transform duration-700 ease-in-out">
+                          {printMediaImages.map((image, index) => (
+                            <div 
+                              key={index} 
+                              className="media-slide flex-shrink-0 w-full h-full relative"
+                            >
+                              <div className="absolute inset-0 overflow-hidden rounded-xl shadow-xl group">
+                                {/* Image container with proper aspect ratio */}
+                                <div className="relative w-full h-full bg-gradient-to-br from-[#0C1B33]/10 to-[#0C1B33]/20">
+                                  <img 
+                                    src={image}
+                                    alt={`Print media ${index+1}`}
+                                    className="w-full h-full object-contain transition-all duration-700 group-hover:scale-105"
+                                    style={{ objectPosition: 'center' }}
+                                  />
+                                </div>
+                                
+                                {/* Enhanced overlay gradient */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#0C1B33]/90 via-[#0C1B33]/40 to-transparent opacity-75 group-hover:opacity-90 transition-opacity duration-500"></div>
+                                
+                                {/* Premium content overlay */}
+                                <div className="absolute inset-0 flex flex-col justify-end p-5">
+                                  <div className="text-white transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                                    <div className="flex items-center mb-2">
+                                      <div className="w-1.5 h-1.5 bg-[#FFD700] rounded-full mr-2 animate-pulse"></div>
+                                      <p className="font-semibold text-lg tracking-wide">{printMediaTitles[index]}</p>
+                                    </div>
+                                    <p className="opacity-0 group-hover:opacity-100 text-sm leading-relaxed transition-opacity duration-500 delay-200 max-w-md">
+                                      {printMediaDescriptions[index]}
+                                    </p>
+                                  </div>
+                                </div>
+                                
+                                {/* Floating elements */}
+                                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-300">
+                                  <div className="w-3 h-3 bg-[#FFD700] rounded-full animate-ping"></div>
+                                </div>
+                                
+                                {/* Award icon overlay */}
+                                <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                  <div className="w-8 h-8 bg-[#FFD700]/90 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                    <span className="text-[#0C1B33] text-sm">🏆</span>
+                                  </div>
+                                </div>
+                                
+                                {/* Decorative corner elements */}
+                                <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-[#FFD700]/70 rounded-tl-xl"></div>
+                                <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-[#FFD700]/70 rounded-br-xl"></div>
+                              </div>
+                            </div>
                           ))}
                         </div>
+                      </div>
 
-                        {/* Decorative Elements */}
-                        <motion.div 
-                          className="absolute top-8 right-8"
-                          animate={{ 
-                            rotate: 360,
-                            scale: [1, 1.2, 1]
-                          }}
-                          transition={{ 
-                            rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                            scale: { duration: 3, repeat: Infinity }
-                          }}
-                        >
-                          <div className="w-16 h-16 bg-gradient-to-r from-[#FFD700] to-[#FFA500] rounded-full flex items-center justify-center shadow-xl pulse-glow">
-                            <span className="text-white text-2xl">📰</span>
+                      {/* Enhanced Slider pagination */}
+                      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+                        {[...Array(7)].map((_, i) => (
+                          <button 
+                            key={i} 
+                            className={`slider-dot w-3 h-3 rounded-full transition-all duration-300 ${i === 0 ? 'bg-gradient-to-r from-[#C73664] to-[#B300B3] scale-125' : 'bg-white/60'}`}
+                            aria-label={`Go to slide ${i+1}`}
+                          ></button>
+                        ))}
+                      </div>
+                      
+                      {/* Auto-play indicator */}
+                      <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full text-xs text-white flex items-center">
+                        <div className="w-2 h-2 bg-[#00FFF7] rounded-full mr-2 animate-pulse"></div>
+                        Auto Play
+                      </div>
+                    </div>
+
+                    {/* Recent highlights list */}
+                    <div className="bg-gradient-to-r from-[#C73664]/5 via-[#00A3A3]/5 to-[#B300B3]/5 p-4 rounded-xl">
+                      <h4 className="font-bold text-[#0C1B33] mb-3 flex items-center">
+                        <span className="text-lg mr-2">✨</span>
+                        Notable Achievements
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                        {[
+                          'Performance at Thrissur Vishnumaya Devasthan, Kerala (2024)',
+                          'World Record recognitions in cultural arts',
+                          'International performances across Europe and Asia'
+                        ].map((highlight, index) => (
+                          <div key={index} className="flex items-start group hover:bg-white/30 p-2 rounded-lg transition-all duration-300">
+                            <div className="flex-shrink-0 w-5 h-5 bg-[#C73664] rounded-full flex items-center justify-center mt-0.5 mr-3 group-hover:scale-110 transition-transform duration-300">
+                              <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+                            </div>
+                            <span className="text-[#0C1B33] text-sm leading-relaxed group-hover:text-[#C73664] transition-colors duration-300">{highlight}</span>
                           </div>
-                        </motion.div>
+                        ))}
                       </div>
                     </div>
                   </div>
-
-                  {/* Caption */}
-                  <motion.div 
-                    className="text-center mt-12"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    <h4 className="text-2xl font-bold text-[#0C1B33] mb-4">
-                      Featured in Leading Media
-                    </h4>
-                    <p className="text-lg text-[#2E2E2E] max-w-3xl mx-auto">
-                      Our academy and students have been recognized by prestigious newspapers and magazines 
-                      across India for excellence in preserving and promoting Kathak dance tradition.
-                    </p>
-                    
-                    {/* Media Logos/Names */}
-                    <motion.div 
-                      className="flex flex-wrap justify-center gap-6 mt-8"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.5, staggerChildren: 0.1 }}
-                    >
-                      {['Times of India', 'Indian Express', 'Hindustan Times', 'Maharashtra Times'].map((media, index) => (
-                        <motion.div
-                          key={media}
-                          className="px-6 py-3 bg-white/80 backdrop-blur-sm rounded-full border-2 border-[#FFD700]/30 hover:border-[#FFD700] transition-all"
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: index * 0.1 }}
-                          whileHover={{ scale: 1.05, y: -5 }}
-                        >
-                          <span className="font-semibold text-[#2E2E2E]">{media}</span>
-                        </motion.div>
-                      ))}
-                    </motion.div>
-                  </motion.div>
                 </div>
               </motion.div>
             )}
