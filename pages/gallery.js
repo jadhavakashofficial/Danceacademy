@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 export default function Gallery() {
+  const [mounted, setMounted] = useState(false);
   const canvasRef = useRef(null);
   const [activeFilter, setActiveFilter] = useState('all');
   const [selectedImage, setSelectedImage] = useState(null);
@@ -13,6 +14,10 @@ export default function Gallery() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoading, setIsLoading] = useState(true);
   const [viewMode, setViewMode] = useState('masonry'); // masonry, grid, showcase
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     // EPIC PARTICLE SYSTEM WITH DANCE ELEMENTS
@@ -439,10 +444,12 @@ export default function Gallery() {
 
   const prevImage = () => {
     const filteredImages = getFilteredImages();
-    const prevIndex = (lightboxIndex - 1 + filteredImages.length) % filteredImages.length;
-    setLightboxIndex(prevIndex);
-    setSelectedImage(filteredImages[prevIndex]);
+  const prevIndex = (lightboxIndex - 1 + filteredImages.length) % filteredImages.length;
+  setLightboxIndex(prevIndex);
+  setSelectedImage(filteredImages[prevIndex]);
   };
+
+  if (!mounted) return null;
 
   return (
     <Layout>

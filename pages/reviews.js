@@ -5,9 +5,14 @@ import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Reviews() {
+  const [mounted, setMounted] = useState(false);
   const canvasRef = useRef(null);
   const [activeTab, setActiveTab] = useState('digital');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Print Media Images from the provided code
   const printMediaImages = [
@@ -226,6 +231,8 @@ export default function Reviews() {
       </motion.span>
     ));
   };
+
+  if (!mounted) return null;
 
   return (
     <Layout>

@@ -7,10 +7,15 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Achievements() {
+  const [mounted, setMounted] = useState(false);
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedAward, setSelectedAward] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   
   // Mouse tracking for interactive effects
@@ -248,6 +253,8 @@ export default function Achievements() {
     return allAwards.filter(award => award.category === activeCategory);
   };
 
+  if (!mounted) return null;
+
   return (
     <Layout>
       <Head>
@@ -373,35 +380,8 @@ export default function Achievements() {
             border-radius: 12px;
             padding: 1.5rem;
 
-      {/* Hero Section with 3D Effects */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Floating Golden Orbs */}
-        <div className="absolute inset-0">
-          {[...Array(15)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute rounded-full opacity-20"
-              style={{
-                background: `radial-gradient(circle, ${['#FFD700', '#C73664', '#00A3A3', '#B300B3'][i % 4]} 0%, transparent 70%)`,
-                width: `${Math.random() * 200 + 100}px`,
-                height: `${Math.random() * 200 + 100}px`,
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-              }}
-              animate={{
-                y: [0, -50, 0],
-                x: [0, Math.random() > 0.5 ? 30 : -30, 0],
-                scale: [1, 1.2, 1],
-                opacity: [0.2, 0.4, 0.2]
-              }}
-              transition={{
-                duration: Math.random() * 10 + 10,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-          ))}
-        </div>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center pt-20">
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
           <motion.div
