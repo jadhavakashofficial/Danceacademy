@@ -417,23 +417,6 @@ export default function Events() {
                         </svg>
                         {event.location}
                       </div>
-
-                      {/* Registration Button for Upcoming Events */}
-                      {event.status === 'upcoming' && event.registration && (
-                        <div className="mt-4">
-                          <button className="w-full bg-gradient-to-r from-[#00A3A3] to-[#00FFF7] text-white py-3 rounded-xl font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                            Register Now
-                          </button>
-                        </div>
-                      )}
-
-                      {/* Highlights Preview */}
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {event.highlights.slice(0, 2).map((highlight, idx) => (
-                          <span key={idx} className="px-3 py-1 bg-[#C73664]/10 text-[#C73664] text-xs rounded-full">
-                            {highlight}
-                          </span>
-                        ))}
                         {event.highlights.length > 2 && (
                           <span className="px-3 py-1 bg-[#2E2E2E]/10 text-[#2E2E2E] text-xs rounded-full">
                             +{event.highlights.length - 2} more
@@ -584,16 +567,6 @@ export default function Events() {
                       <div className="text-center">
                         <div className="text-2xl font-bold text-[#00A3A3]">{selectedEvent.registration.workshops}</div>
                         <div className="text-sm text-[#2E2E2E]">Workshop Fee</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-2xl font-bold text-[#00A3A3]">{selectedEvent.registration.deadline}</div>
-                        <div className="text-sm text-[#2E2E2E]">Registration Deadline</div>
-                      </div>
-                    </div>
-                    <button className="w-full bg-gradient-to-r from-[#00A3A3] to-[#00FFF7] text-white py-3 rounded-xl font-medium transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                      Register for Event
-                    </button>
-                  </div>
                 )}
 
                 {/* Event Gallery */}

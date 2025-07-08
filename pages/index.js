@@ -411,11 +411,19 @@ export default function Home() {
       {/* Content Section - Adjusted with negative top margin */}
       <div className="flex flex-col justify-center space-y-6 md:space-y-8 z-10 pt-4 md:-mt-5">{/* Added negative top margin */}
         <div className="space-y-6 md:space-y-8">
-          {/* Animated heading */}
+          {/* Logo and heading */}
+          <Image
+            src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/Sanchay-1.png"
+            alt="Sanchay Kathak Logo"
+            width={160}
+            height={160}
+            className="mx-auto lg:mx-0 mb-4"
+          />
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-[#0C1B33] animate-fadeInUp" style={{ fontFamily: 'Playfair Display, serif' }}>
-            <span className="block">Master the Classical</span>
-            <span className="block">Art of <span className="text-[#C73664] bg-clip-text bg-gradient-to-r from-[#C73664] to-[#B300B3]">Kathak</span></span>
+            <span className="block">Sanchay Kathak</span>
+            <span className="block">Nrutya Academy</span>
           </h1>
+          <p className="text-[#C73664] font-semibold">Established in 1990</p>
           
           {/* Subheading with emphasis */}
           <p 
@@ -433,9 +441,7 @@ export default function Home() {
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 animate-fadeInUp" style={{ animationDelay: '0.5s' }}>
             {[
               {title: "Established 1990", icon: "🏛️"},
-              {title: "35+ Years Excellence", icon: "🌟"}, 
-              {title: "2 Major Gharanas", icon: "💃"}, 
-              {title: "Global Recognition", icon: "🌎"}
+              {title: "35+ Years Excellence", icon: "🌟"},  
             ].map((item, index) => (
               <div 
                 key={index}
@@ -451,7 +457,7 @@ export default function Home() {
           {/* Buttons */}
           <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-fadeInUp" style={{ animationDelay: '0.7s' }}>
             <Link 
-              href="/enroll"
+              href="/contact"
               className="group relative px-5 py-2.5 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 overflow-hidden"
               style={{ 
                 background: 'linear-gradient(90deg, #C73664, #B300B3)',

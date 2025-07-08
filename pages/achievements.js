@@ -1,5 +1,5 @@
 // pages/achievements.js
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -7,100 +7,12 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Achievements() {
-  const canvasRef = useRef(null);
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedAward, setSelectedAward] = useState(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
-  useEffect(() => {
-    // Enhanced particle animation
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d');
-    let animationFrameId;
-    
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    
-    const particles = [];
-    const particleCount = 150;
-    
-    // Create golden particles
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 6 + 2,
-        speed: Math.random() * 0.5 + 0.1,
-        opacity: Math.random() * 0.3 + 0.1,
-        color: `rgba(${255 - Math.random() * 50}, ${215 - Math.random() * 50}, ${0 + Math.random() * 50}, ${Math.random() * 0.2 + 0.1})`,
-        angle: Math.random() * Math.PI * 2,
-        rotation: Math.random() * 0.02
-      });
-    }
-    
-    function drawParticles() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      // Golden gradient background
-      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, 'rgba(253, 249, 240, 0.9)');
-      gradient.addColorStop(0.5, 'rgba(255, 248, 220, 0.85)');
-      gradient.addColorStop(1, 'rgba(253, 249, 240, 0.9)');
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      particles.forEach(particle => {
-        ctx.save();
-        ctx.translate(particle.x, particle.y);
-        ctx.rotate(particle.angle);
-        ctx.globalAlpha = particle.opacity;
-        
-        // Draw star-shaped particle
-        ctx.beginPath();
-        for (let i = 0; i < 5; i++) {
-          const angle = (i * Math.PI * 2) / 5;
-          const x = Math.cos(angle) * particle.size;
-          const y = Math.sin(angle) * particle.size;
-          if (i === 0) ctx.moveTo(x, y);
-          else ctx.lineTo(x, y);
-        }
-        ctx.closePath();
-        ctx.fillStyle = particle.color;
-        ctx.fill();
-        
-        ctx.restore();
-        
-        // Update particle
-        particle.x -= particle.speed;
-        particle.angle += particle.rotation;
-        
-        if (particle.x < -particle.size) {
-          particle.x = canvas.width + particle.size;
-          particle.y = Math.random() * canvas.height;
-        }
-      });
-      
-      animationFrameId = requestAnimationFrame(drawParticles);
-    }
-    
-    drawParticles();
-    
-    const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    
-    window.addEventListener('resize', handleResize);
-    
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
+  
   // Mouse tracking for interactive effects
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -116,7 +28,6 @@ export default function Achievements() {
       id: 1,
       title: "30+ Nritya Visharad Graduates",
       description: "Students who have mastered the comprehensive Kathak curriculum",
-      icon: "🎓",
       color: "#FFD700",
       count: "30+",
       category: "academic"
@@ -125,7 +36,6 @@ export default function Achievements() {
       id: 2,
       title: "2 Nritya Alankar Achievers",
       description: "The highest level of classical dance certification",
-      icon: "👑",
       color: "#C73664",
       count: "2",
       category: "academic"
@@ -134,7 +44,6 @@ export default function Achievements() {
       id: 3,
       title: "Premier Institution Affiliations",
       description: "ABGMV, Tilak Maharashtra Vidyapeeth, Dr. D.Y. Patil College,Lalit Kala Kendra Pune Univercity",
-      icon: "🏛️",
       color: "#00A3A3",
       count: "4+",
       category: "academic"
@@ -199,7 +108,6 @@ export default function Achievements() {
       year: "2008",
       organization: "Lion's Club",
       description: "Recognition for excellence in dance education",
-      icon: "🦁",
       category: "vaishali"
     },
     {
@@ -208,7 +116,6 @@ export default function Achievements() {
       year: "2009",
       organization: "Presented by Pt. Ajay Chakraborty",
       description: "Young artist award for outstanding contribution",
-      icon: "🌟",
       category: "vaishali"
     },
     {
@@ -217,7 +124,6 @@ export default function Achievements() {
       year: "2016",
       organization: "Cultural Council",
       description: "Honoring dedication to classical music and dance",
-      icon: "🎵",
       category: "vaishali"
     },
     {
@@ -226,7 +132,6 @@ export default function Achievements() {
       year: "2018",
       organization: "Arts Foundation",
       description: "Excellence in cultural preservation and innovation",
-      icon: "🎨",
       category: "vaishali"
     },
     {
@@ -235,7 +140,6 @@ export default function Achievements() {
       year: "2019",
       organization: "Maharashtra Cultural Board",
       description: "Lifetime contribution to performing arts",
-      icon: "🏆",
       category: "vaishali"
     }
   ];
@@ -247,7 +151,6 @@ export default function Achievements() {
       year: "2018",
       organization: "Cultural Academy",
       description: "Recognition for artistic innovation",
-      icon: "🎭",
       category: "rajashree"
     },
     {
@@ -256,7 +159,6 @@ export default function Achievements() {
       year: "2019",
       organization: "Dance Innovation Council",
       description: "Excellence in choreographic creativity",
-      icon: "💫",
       category: "rajashree"
     },
     {
@@ -265,7 +167,6 @@ export default function Achievements() {
       year: "2024",
       organization: "ABSS International",
       description: "Outstanding choreographic achievement",
-      icon: "🎪",
       category: "rajashree"
     },
     {
@@ -274,7 +175,6 @@ export default function Achievements() {
       year: "2021",
       organization: "Kalapini Foundation",
       description: "Annual recognition for rising stars",
-      icon: "⭐",
       category: "rajashree"
     },
     {
@@ -283,7 +183,6 @@ export default function Achievements() {
       year: "2020-22",
       organization: "NYK",
       description: "Three consecutive years of excellence",
-      icon: "🥇",
       category: "rajashree"
     }
   ];
@@ -293,21 +192,18 @@ export default function Achievements() {
       id: 1,
       title: "Limca Book of Records",
       description: "Featured for exceptional dance performances",
-      icon: "📚",
       color: "#FF6B35"
     },
     {
       id: 2,
       title: "Universal Records Forum",
       description: "International recognition for cultural contribution",
-      icon: "🌍",
       color: "#4ECDC4"
     },
     {
       id: 3,
       title: "World Records Book of India",
       description: "National acknowledgment of artistic excellence",
-      icon: "🇮🇳",
       color: "#45B7D1"
     }
   ];
@@ -337,9 +233,9 @@ export default function Achievements() {
   ];
 
   const filterCategories = [
-    { id: 'all', label: 'All Awards', icon: '🏆' },
-    { id: 'vaishali', label: 'Vaishali Awards', icon: '👑' },
-    { id: 'rajashree', label: 'Rajashree Awards', icon: '⭐' }
+    { id: 'all', label: 'All Awards',  },
+    { id: 'vaishali', label: 'Vaishali Awards',  },
+    { id: 'rajashree', label: 'Rajashree Awards',  }
   ];
 
   const getAllAwards = () => {
@@ -476,15 +372,6 @@ export default function Achievements() {
             background: white;
             border-radius: 12px;
             padding: 1.5rem;
-          }
-        `}</style>
-      </Head>
-
-      {/* Magical Background Canvas */}
-      <canvas 
-        ref={canvasRef} 
-        className="fixed top-0 left-0 w-full h-full -z-10"
-      ></canvas>
 
       {/* Hero Section with 3D Effects */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -646,14 +533,6 @@ export default function Achievements() {
                       }}></div>
                     </div>
 
-                    {/* Floating Icon */}
-                    <motion.div 
-                      className="text-6xl mb-6 relative z-10"
-                      animate={{ rotateY: [0, 15, -15, 0] }}
-                      transition={{ duration: 4, repeat: Infinity }}
-                    >
-                      {milestone.icon}
-                    </motion.div>
 
                     {/* Count with 3D Effect */}
                     <motion.div 
@@ -859,9 +738,7 @@ export default function Achievements() {
                   initial={false}
                 />
                 
-                <span className="relative z-10 flex items-center space-x-2">
-                  <span>{category.icon}</span>
-                  <span>{category.label}</span>
+                  <span className="relative z-10">{category.label}</span>
                 </span>
               </motion.button>
             ))}
@@ -908,12 +785,6 @@ export default function Achievements() {
                         }}
                         transition={{ 
                           duration: 4, 
-                          repeat: Infinity,
-                          ease: "easeInOut"
-                        }}
-                      >
-                        {award.icon}
-                      </motion.div>
 
                       {/* Year Badge */}
                       <motion.div 
@@ -1014,13 +885,6 @@ export default function Achievements() {
                   />
 
                   {/* Icon with 3D Rotation */}
-                  <motion.div 
-                    className="text-7xl mb-6 relative z-10"
-                    animate={{ rotateY: 360 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                  >
-                    {record.icon}
-                  </motion.div>
 
                   <h3 
                     className="text-xl font-bold mb-4 relative z-10"
@@ -1295,7 +1159,6 @@ export default function Achievements() {
               </button>
 
               <div className="text-center">
-                <div className="text-6xl mb-4">{selectedAward.icon}</div>
                 <div className="inline-block px-3 py-1 bg-gradient-to-r from-[#FFD700] to-[#FFA500] text-white rounded-full text-sm font-bold mb-4">
                   {selectedAward.year}
                 </div>

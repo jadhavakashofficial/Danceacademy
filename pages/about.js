@@ -190,7 +190,6 @@ export default function About() {
         "M.A. in Kathak from Lalit Kala Kendra",
         "Trained in Banaras, Lucknow, and Jaipur Gharanas",
         "Multi-instrumentalist: tabla, harmonium, violin",
-        "Currently training under Pt. Rajendra Gangani Ji"
       ],
       awards: [
         "Adarsh Nrutya Shikshak Puraskar (2008)",
@@ -201,7 +200,7 @@ export default function About() {
     },
     {
       name: "Rajashree Dhongade",
-      title: "Principal & Senior Instructor",
+      title: "Senior Instructor",
       image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1750233481334.png",
       qualifications: [
         "M.A. in Kathak from Pune University",
@@ -224,24 +223,18 @@ export default function About() {
       address: "Near Chinchwad Ganapati Temple, Chinchwad",
       timings: "Mon-Sat: 5:00 PM - 8:00 PM",
       contact: "+91 9011910412",
-      established: "1990",
-      specialization: "Foundation & Advanced Training"
     },
     {
       name: "Nigdi Branch", 
       address: "Sector 25, Nigdi, Pune",
       timings: "Mon-Sat: 4:00 PM - 7:00 PM",
       contact: "+91 7507234753",
-      established: "2000",
-      specialization: "Intermediate & Performance Groups"
     },
     {
       name: "Ravet Branch",
       address: "Sector 17, Ravet, Nigdi",
       timings: "Mon-Sat: 6:00 PM - 9:00 PM", 
       contact: "+91 9011910412",
-      established: "2010",
-      specialization: "Children's Programs & Adult Classes"
     }
   ];
 
@@ -434,8 +427,20 @@ export default function About() {
             <div className="w-32 h-1 bg-gradient-to-r from-[#C73664] via-[#B300B3] to-[#00A3A3] mx-auto rounded-full mb-8"></div>
             
             <p className="text-xl md:text-2xl text-[#2E2E2E] max-w-4xl mx-auto leading-relaxed mb-10">
-              For over <span className="font-bold text-[#C73664]">35 years</span>, we have been the guardians of Kathak tradition, 
+              For over <span className="font-bold text-[#C73664]">35 years</span>, we have been the guardians of Kathak tradition,
               nurturing artists who carry forward India's rich cultural heritage with passion and precision.
+            </p>
+            <p className="max-w-4xl mx-auto text-[#2E2E2E] leading-relaxed mb-6">
+              It was upon the guidance and encouragement of Guru Dr. Pandit Nandkishore Kapote ji that Guru Vaishali ji began conducting Kathak classes in Chinchwad, aiming to sow the seeds of classical dance in this culturally deprived landscape.
+            </p>
+            <p className="max-w-4xl mx-auto text-[#2E2E2E] leading-relaxed mb-6">
+              The name "Sanchay" was graciously bestowed in 1993 by none other than Guru Pandita Rohini Bhate ji herself. The name represents the accumulation of training Guru Vaishali ji received from Banaras, Lucknow and Jaipur traditions, making the academy a true treasury of Kathak heritage.
+            </p>
+            <p className="max-w-4xl mx-auto text-[#2E2E2E] leading-relaxed mb-6">
+              With a deep resolve to awaken the love for Kathak in the local community, Guru Vaishali ji worked tirelessly to foster excellence and stage confidence in her disciples.
+            </p>
+            <p className="max-w-4xl mx-auto text-[#2E2E2E] leading-relaxed mb-10">
+              Today, Sanchay Kathak Nritya Academy proudly boasts 40 students who have achieved the title of Nritya Visharad and 2 students who have earned Nritya Alankar.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -813,13 +818,6 @@ export default function About() {
                 <div className="mt-6 pt-6 border-t border-[#E2E8F0]">
                   <div className="flex justify-between items-center">
                     <div>
-                      <p className="text-xs text-[#2E2E2E]/70">Established</p>
-                      <p className="font-bold text-[#C73664]">{branch.established}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-xs text-[#2E2E2E]/70">Specialization</p>
-                      <p className="font-medium text-[#0C1B33] text-sm">{branch.specialization}</p>
-                    </div>
                   </div>
                 </div>
                 
