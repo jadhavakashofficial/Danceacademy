@@ -417,11 +417,6 @@ export default function Events() {
                         </svg>
                         {event.location}
                       </div>
-                        {event.highlights.length > 2 && (
-                          <span className="px-3 py-1 bg-[#2E2E2E]/10 text-[#2E2E2E] text-xs rounded-full">
-                            +{event.highlights.length - 2} more
-                          </span>
-                        )}
                       </div>
                     </div>
 

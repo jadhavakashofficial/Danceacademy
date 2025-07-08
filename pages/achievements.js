@@ -380,6 +380,7 @@ export default function Achievements() {
             border-radius: 12px;
             padding: 1.5rem;
           }
+        `}</style>
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">
