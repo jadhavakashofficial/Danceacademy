@@ -816,9 +816,7 @@ export default function About() {
                 
                 {/* Footer */}
                 <div className="mt-6 pt-6 border-t border-[#E2E8F0]">
-                  <div className="flex justify-between items-center">
-                    <div>
-                  </div>
+                  <div className="flex justify-between items-center" />
                 </div>
                 
                 {/* Hover Effect */}

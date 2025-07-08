@@ -379,6 +379,7 @@ export default function Achievements() {
             background: white;
             border-radius: 12px;
             padding: 1.5rem;
+          }
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-20">
