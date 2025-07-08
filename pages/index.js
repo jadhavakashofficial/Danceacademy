@@ -1024,14 +1024,6 @@ export default function Home() {
                 </div>
                 <span className="text-[#2E2E2E] group-hover:text-[#0C1B33] transition-colors duration-300">Nritya Visharad from Gandharva Mahavidyalaya</span>
               </li>
-              <li className="flex items-start group/item">
-                <div className="flex-shrink-0 mt-1 mr-3 text-[#C73664] transform transition-transform duration-300 group-hover/item:scale-125">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
-                  </svg>
-                </div>
-                <span className="text-[#2E2E2E] group-hover:text-[#0C1B33] transition-colors duration-300">Trained across three major Gharanas</span>
-              </li>
             </ul>
             
             
@@ -1082,7 +1074,6 @@ export default function Home() {
             </div>
             
             <div className="flex flex-wrap gap-1 mb-4">
-              <span className="bg-[#FFD700]/10 text-[#B8860B] px-3 py-1 rounded-full text-xs font-medium border border-[#FFD700]/20">Principal & Choreographer</span>
               <span className="bg-[#B300B3]/10 text-[#B300B3] px-3 py-1 rounded-full text-xs font-medium border border-[#B300B3]/20">Senior Instructor</span>
             </div>
             
@@ -1121,10 +1112,6 @@ export default function Home() {
               </li>
             </ul>
             
-            <div className="bg-gradient-to-r from-white to-[#FFF5ED] p-4 rounded-xl border-l-4 border-[#00A3A3] text-xs shadow-inner group-hover:shadow-lg transition-shadow duration-300">
-              <h4 className="font-bold text-[#00A3A3] mb-1">Specialization:</h4>
-              <p className="font-bold text-[#0C1B33]">Contemporary Kathak fusion</p>
-            </div>
           </div>
         </div>
         

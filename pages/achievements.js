@@ -10,23 +10,11 @@ export default function Achievements() {
   const [mounted, setMounted] = useState(false);
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedAward, setSelectedAward] = useState(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  
-  // Mouse tracking for interactive effects
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
   const academicMilestones = [
     {
@@ -61,48 +49,42 @@ export default function Achievements() {
       country: "Singapore",
       event: "ABSS Cultural Festival",
       year: "2023-24",
-      image: "🇸🇬",
-      description: "Showcased authentic Kathak at the premier cultural platform"
+      
     },
     {
       id: 2,
       country: "Bangkok",
       event: "International Dance Competition",
       year: "2023",
-      image: "🇹🇭",
-      description: "Won multiple awards in classical dance categories"
+      
     },
     {
       id: 3,
       country: "Germany",
       event: "European Culture Week",
       year: "2022",
-      image: "🇩🇪",
-      description: "Represented Indian classical arts to European audiences"
+      
     },
     {
       id: 4,
       country: "Austria",
       event: "Vienna Arts Festival",
       year: "2022",
-      image: "🇦🇹",
-      description: "Cultural exchange through traditional dance"
+      
     },
     {
       id: 5,
       country: "Netherlands",
       event: "Amsterdam Cultural Center",
       year: "2021",
-      image: "🇳🇱",
-      description: "Cross-cultural performance celebrating diversity"
+      
     },
     {
       id: 6,
       country: "Paris",
       event: "Festival of India",
       year: "2021",
-      image: "🇫🇷",
-      description: "Mesmerized Parisian audiences with classical elegance"
+      
     }
   ];
 
@@ -111,40 +93,30 @@ export default function Achievements() {
       id: 1,
       title: "Adarsh Nrutya Shikshak Puraskar",
       year: "2008",
-      organization: "Lion's Club",
-      description: "Recognition for excellence in dance education",
       category: "vaishali"
     },
     {
       id: 2,
       title: "Yuva Kathak Nrutya Kalakar",
       year: "2009",
-      organization: "Presented by Pt. Ajay Chakraborty",
-      description: "Young artist award for outstanding contribution",
       category: "vaishali"
     },
     {
       id: 3,
       title: "Sangeet Kalopasak Puraskar",
       year: "2016",
-      organization: "Cultural Council",
-      description: "Honoring dedication to classical music and dance",
       category: "vaishali"
     },
     {
       id: 4,
       title: "Kala Rang Puraskar",
       year: "2018",
-      organization: "Arts Foundation",
-      description: "Excellence in cultural preservation and innovation",
       category: "vaishali"
     },
     {
       id: 5,
       title: "Kalarpan Puraskar",
       year: "2019",
-      organization: "Maharashtra Cultural Board",
-      description: "Lifetime contribution to performing arts",
       category: "vaishali"
     }
   ];
@@ -154,40 +126,30 @@ export default function Achievements() {
       id: 1,
       title: "Kalarang Puraskar",
       year: "2018",
-      organization: "Cultural Academy",
-      description: "Recognition for artistic innovation",
       category: "rajashree"
     },
     {
       id: 2,
       title: "Nrityavishkar Award",
       year: "2019",
-      organization: "Dance Innovation Council",
-      description: "Excellence in choreographic creativity",
       category: "rajashree"
     },
     {
       id: 3,
       title: "Best Choreographer",
       year: "2024",
-      organization: "ABSS International",
-      description: "Outstanding choreographic achievement",
       category: "rajashree"
     },
     {
       id: 4,
       title: "Varshant Sitara Puraskar",
       year: "2021",
-      organization: "Kalapini Foundation",
-      description: "Annual recognition for rising stars",
       category: "rajashree"
     },
     {
       id: 5,
       title: "Nehru Yuva Kendra Champion",
       year: "2020-22",
-      organization: "NYK",
-      description: "Three consecutive years of excellence",
       category: "rajashree"
     }
   ];
