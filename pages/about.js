@@ -189,8 +189,7 @@ export default function About() {
       qualifications: [
         "M.A. in Kathak from Lalit Kala Kendra",
         "Trained in Banaras, Lucknow, and Jaipur Gharanas",
-        "Multi-instrumentalist: tabla, harmonium, violin",
-        "Currently training under Pt. Rajendra Gangani Ji"
+        "Multi-instrumentalist: tabla, harmonium, violin"
       ],
       awards: [
         "Adarsh Nrutya Shikshak Puraskar (2008)",
@@ -201,11 +200,10 @@ export default function About() {
     },
     {
       name: "Rajashree Dhongade",
-      title: "Principal & Senior Instructor",
+      title: "Senior Instructor",
       image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1750233481334.png",
       qualifications: [
         "M.A. in Kathak from Pune University",
-        "Trained under Guru Vaishali & Pt. Rajendra Gangani",
         "UGC-NET qualified with 95% score",
         "Visharad & Nrityalankar with 1st Rank"
       ],
@@ -218,32 +216,7 @@ export default function About() {
     }
   ];
 
-  const branches = [
-    {
-      name: "Chinchwad Branch",
-      address: "Near Chinchwad Ganapati Temple, Chinchwad",
-      timings: "Mon-Sat: 5:00 PM - 8:00 PM",
-      contact: "+91 9011910412",
-      established: "1990",
-      specialization: "Foundation & Advanced Training"
-    },
-    {
-      name: "Nigdi Branch", 
-      address: "Sector 25, Nigdi, Pune",
-      timings: "Mon-Sat: 4:00 PM - 7:00 PM",
-      contact: "+91 7507234753",
-      established: "2000",
-      specialization: "Intermediate & Performance Groups"
-    },
-    {
-      name: "Ravet Branch",
-      address: "Sector 17, Ravet, Nigdi",
-      timings: "Mon-Sat: 6:00 PM - 9:00 PM", 
-      contact: "+91 9011910412",
-      established: "2010",
-      specialization: "Children's Programs & Adult Classes"
-    }
-  ];
+  const branches = ["Chinchwad", "Nigdi", "Ravet"];
 
   const values = [
     {
@@ -643,77 +616,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section 
-        id="timeline"
-        className="py-20 relative overflow-hidden"
-        style={{ 
-          background: 'linear-gradient(135deg, #FFFFFF 0%, #FFF8F0 50%, #FFFFFF 100%)',
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-block px-6 py-2 bg-[#B300B3]/10 text-[#B300B3] rounded-full text-sm font-bold uppercase tracking-[0.2em] mb-4">
-              Our Timeline
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0C1B33] mb-4">
-              Milestones in Our 
-              <span className="gradient-text"> Journey</span>
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#B300B3] to-[#FFD700] mx-auto rounded-full"></div>
-          </div>
 
-          <div className="relative">
-            {/* Modern Timeline Design */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {achievements.map((achievement, index) => (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="relative"
-                >
-                  {/* Card */}
-                  <div 
-                    className="h-full rounded-2xl p-6 shadow-xl group hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
-                    style={{ 
-                      background: `linear-gradient(135deg, ${achievement.color}10, ${achievement.color}05)`,
-                      border: `2px solid ${achievement.color}20`
-                    }}
-                  >
-                    <div className="flex flex-col h-full">
-                      <div className="flex items-center mb-4">
-                        <div 
-                          className="w-10 h-10 rounded-full flex items-center justify-center text-white mr-3 shadow-md"
-                          style={{ backgroundColor: achievement.color }}
-                        >
-                          {achievement.icon}
-                        </div>
-                        <div>
-                          <div 
-                            className="text-xl font-bold"
-                            style={{ color: achievement.color }}
-                          >
-                            {achievement.year}
-                          </div>
-                          <h3 className="font-bold text-[#0C1B33]">
-                            {achievement.title}
-                          </h3>
-                        </div>
-                      </div>
-                      <p className="text-[#2E2E2E] leading-relaxed flex-grow">
-                        {achievement.desc}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Branches Section */}
       <section 
@@ -756,7 +659,7 @@ export default function About() {
                 {/* Header */}
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-[#0C1B33] mb-2 group-hover:text-[#C73664] transition-colors">
-                    {branch.name}
+                    {branch}
                   </h3>
                   <div className="w-12 h-1 bg-gradient-to-r from-[#C73664] to-[#B300B3] rounded-full group-hover:w-20 transition-all duration-300"></div>
                 </div>
@@ -771,57 +674,9 @@ export default function About() {
                 </div>
                 
                 {/* Details */}
-                <div className="space-y-4">
-                  <div className="flex items-start">
-                    <div className="w-6 h-6 bg-[#00A3A3]/20 rounded-lg flex items-center justify-center mr-3 mt-0.5">
-                      <svg className="w-4 h-4 text-[#00A3A3]" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-medium text-[#0C1B33] text-sm">Address</p>
-                      <p className="text-[#2E2E2E] text-sm">{branch.address}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="w-6 h-6 bg-[#B300B3]/20 rounded-lg flex items-center justify-center mr-3 mt-0.5">
-                      <svg className="w-4 h-4 text-[#B300B3]" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-medium text-[#0C1B33] text-sm">Timings</p>
-                      <p className="text-[#2E2E2E] text-sm">{branch.timings}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start">
-                    <div className="w-6 h-6 bg-[#FFD700]/20 rounded-lg flex items-center justify-center mr-3 mt-0.5">
-                      <svg className="w-4 h-4 text-[#FFD700]" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="font-medium text-[#0C1B33] text-sm">Contact</p>
-                      <p className="text-[#2E2E2E] text-sm">{branch.contact}</p>
-                    </div>
-                  </div>
-                </div>
                 
                 {/* Footer */}
-                <div className="mt-6 pt-6 border-t border-[#E2E8F0]">
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <p className="text-xs text-[#2E2E2E]/70">Established</p>
-                      <p className="font-bold text-[#C73664]">{branch.established}</p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-xs text-[#2E2E2E]/70">Specialization</p>
-                      <p className="font-medium text-[#0C1B33] text-sm">{branch.specialization}</p>
-                    </div>
-                  </div>
-                </div>
+                <div className="mt-6"></div>
                 
                 {/* Hover Effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#C73664]/5 to-[#00A3A3]/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10"></div>
