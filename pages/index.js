@@ -411,11 +411,19 @@ export default function Home() {
       {/* Content Section - Adjusted with negative top margin */}
       <div className="flex flex-col justify-center space-y-6 md:space-y-8 z-10 pt-4 md:-mt-5">{/* Added negative top margin */}
         <div className="space-y-6 md:space-y-8">
-          {/* Animated heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-[#0C1B33] animate-fadeInUp" style={{ fontFamily: 'Playfair Display, serif' }}>
-            <span className="block">Master the Classical</span>
-            <span className="block">Art of <span className="text-[#C73664] bg-clip-text bg-gradient-to-r from-[#C73664] to-[#B300B3]">Kathak</span></span>
-          </h1>
+          {/* Academy Logo */}
+          <div className="flex justify-center md:justify-start animate-fadeInUp">
+            <Image
+              src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/Sanchay-1.png"
+              alt="Sanchay Kathak Nrutya Academy"
+              width={250}
+              height={150}
+              className="object-contain"
+            />
+          </div>
+          <p className="text-center md:text-left font-semibold" style={{fontFamily: 'Poppins, sans-serif'}}>
+            Established in 1990
+          </p>
           
           {/* Subheading with emphasis */}
           <p 
@@ -433,9 +441,7 @@ export default function Home() {
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 animate-fadeInUp" style={{ animationDelay: '0.5s' }}>
             {[
               {title: "Established 1990", icon: "🏛️"},
-              {title: "35+ Years Excellence", icon: "🌟"}, 
-              {title: "2 Major Gharanas", icon: "💃"}, 
-              {title: "Global Recognition", icon: "🌎"}
+              {title: "35+ Years Excellence", icon: "🌟"}
             ].map((item, index) => (
               <div 
                 key={index}
@@ -450,8 +456,8 @@ export default function Home() {
 
           {/* Buttons */}
           <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-fadeInUp" style={{ animationDelay: '0.7s' }}>
-            <Link 
-              href="/enroll"
+            <Link
+              href="/contact"
               className="group relative px-5 py-2.5 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 overflow-hidden"
               style={{ 
                 background: 'linear-gradient(90deg, #C73664, #B300B3)',
@@ -494,7 +500,7 @@ export default function Home() {
               alt="Kathak Performer"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="rounded-2xl transform transition-transform duration-700 group-hover:scale-105 object-cover object-top"
+              className="rounded-2xl object-contain"
             />
             <div className="absolute bottom-3 left-3 z-20 text-white text-xs sm:text-sm font-medium text-shadow" style={{ fontFamily: 'Poppins, sans-serif' }}>
               Traditional Kathak
@@ -510,7 +516,7 @@ export default function Home() {
               alt="Kathak Performer"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="rounded-2xl transform transition-transform duration-700 group-hover:scale-105 object-cover object-center"
+              className="rounded-2xl object-contain"
             />
             <div className="absolute top-3 right-3 z-20">
               <div className="w-7 h-7 sm:w-8 sm:h-8 bg-[#C73664] rounded-full flex items-center justify-center text-white shadow-md transform transition-transform duration-300 group-hover:scale-110">
@@ -1076,7 +1082,6 @@ export default function Home() {
             </div>
             
             <div className="flex flex-wrap gap-1 mb-4">
-              <span className="bg-[#FFD700]/10 text-[#B8860B] px-3 py-1 rounded-full text-xs font-medium border border-[#FFD700]/20">Principal & Choreographer</span>
               <span className="bg-[#B300B3]/10 text-[#B300B3] px-3 py-1 rounded-full text-xs font-medium border border-[#B300B3]/20">Senior Instructor</span>
             </div>
             
