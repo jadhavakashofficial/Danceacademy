@@ -204,7 +204,6 @@ export default function About() {
       image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1750233481334.png",
       qualifications: [
         "M.A. in Kathak from Pune University",
-        "Trained under Guru Vaishali & Pt. Rajendra Gangani",
         "UGC-NET qualified with 95% score",
         "Visharad & Nrityalankar with 1st Rank"
       ],
@@ -218,30 +217,9 @@ export default function About() {
   ];
 
   const branches = [
-    {
-      name: "Chinchwad Branch",
-      address: "Near Chinchwad Ganapati Temple, Chinchwad",
-      timings: "Mon-Sat: 5:00 PM - 8:00 PM",
-      contact: "+91 9011910412",
-      established: "1990",
-      specialization: "Foundation & Advanced Training"
-    },
-    {
-      name: "Nigdi Branch", 
-      address: "Sector 25, Nigdi, Pune",
-      timings: "Mon-Sat: 4:00 PM - 7:00 PM",
-      contact: "+91 7507234753",
-      established: "2000",
-      specialization: "Intermediate & Performance Groups"
-    },
-    {
-      name: "Ravet Branch",
-      address: "Sector 17, Ravet, Nigdi",
-      timings: "Mon-Sat: 6:00 PM - 9:00 PM", 
-      contact: "+91 9011910412",
-      established: "2010",
-      specialization: "Children's Programs & Adult Classes"
-    }
+    { name: "Chinchwad Branch", contact: "+91 9011910412" },
+    { name: "Nigdi Branch", contact: "+91 7507234753" },
+    { name: "Ravet Branch", contact: "+91 9011910412" }
   ];
 
   const values = [

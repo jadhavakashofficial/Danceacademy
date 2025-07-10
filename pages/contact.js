@@ -174,30 +174,9 @@ ${formData.message}
   };
 
   const branches = [
-    {
-      id: 1,
-      name: "Main Branch - Chinchwad",
-      address: "Sanchay Kathak Nrutya Academy, Chinchwad, Pune, Maharashtra - India",
-      icon: "🏛️",
-      color: "#C73664",
-      isMain: true
-    },
-    {
-      id: 2,
-      name: "Nigdi-Pradhikaran Branch",
-      address: "Nigdi-Pradhikaran, Pune, Maharashtra",
-      icon: "🎭",
-      color: "#00A3A3",
-      isMain: false
-    },
-    {
-      id: 3,
-      name: "Ravet Branch",
-      address: "Ravet, Pune, Maharashtra",
-      icon: "💃",
-      color: "#B300B3",
-      isMain: false
-    }
+    { id: 1, name: "Main Branch - Chinchwad", icon: "🏛️", color: "#C73664", isMain: true },
+    { id: 2, name: "Nigdi-Pradhikaran Branch", icon: "🎭", color: "#00A3A3", isMain: false },
+    { id: 3, name: "Ravet Branch", icon: "💃", color: "#B300B3", isMain: false }
   ];
 
   const contactMethods = [
@@ -949,9 +928,7 @@ ${formData.message}
                   {branch.name}
                 </h3>
                 
-                <p className="text-white/80 leading-relaxed">
-                  {branch.address}
-                </p>
+
 
                 {/* Hover Glow Effect */}
                 <motion.div 

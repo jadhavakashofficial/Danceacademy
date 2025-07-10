@@ -10,7 +10,6 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isLoading, setIsLoading] = useState(true);
   const [imagesLoaded, setImagesLoaded] = useState(0);
 
   // All gallery images in a single array
@@ -297,8 +296,6 @@ export default function Gallery() {
     
     drawParticles();
     
-    // Simulate loading completion
-    setTimeout(() => setIsLoading(false), 2500);
     
     const handleResize = () => {
       canvas.width = window.innerWidth;
@@ -622,64 +619,7 @@ export default function Gallery() {
         className="fixed top-0 left-0 w-full h-full -z-10"
       ></canvas>
 
-      {/* Loading screen */}
-      <AnimatePresence>
-        {isLoading && (
-          <motion.div
-            className="fixed inset-0 bg-gradient-to-br from-[#C73664] via-[#B300B3] to-[#00A3A3] z-50 flex items-center justify-center"
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <div className="text-center">
-              <motion.div
-                className="w-40 h-40 mx-auto mb-8 relative"
-                animate={{ 
-                  rotate: 360,
-                  scale: [1, 1.2, 1],
-                }}
-                transition={{ 
-                  rotate: { duration: 2, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
-                }}
-              >
-                <div className="absolute inset-0 bg-white/20 rounded-full morphing-shape"></div>
-                <Image
-                  src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/Sanchay-1.png"
-                  alt="Sanchay Kathak Academy"
-                  width={160}
-                  height={160}
-                  className="w-full h-full object-contain filter drop-shadow-2xl relative z-10"
-                />
-              </motion.div>
-              <motion.h2 
-                className="text-4xl font-bold text-white mb-6 shimmer-text"
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                Loading Gallery...
-              </motion.h2>
-              <motion.p 
-                className="text-white/80 text-lg mb-8"
-                animate={{ opacity: [0.3, 0.8, 0.3] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                Preparing visual excellence
-              </motion.p>
-              <motion.div
-                className="w-80 h-2 bg-white/20 rounded-full mx-auto overflow-hidden"
-              >
-                <motion.div
-                  className="h-full bg-white rounded-full"
-                  initial={{ width: "0%" }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 2.5, ease: "easeInOut" }}
-                />
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
 
       {/* Hero section with centered logo */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">

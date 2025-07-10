@@ -440,8 +440,8 @@ export default function Home() {
           {/* Stats grid with hover effects */}
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 animate-fadeInUp" style={{ animationDelay: '0.5s' }}>
             {[
-              {title: "Established 1990", icon: "🏛️"},
-              {title: "35+ Years Excellence", icon: "🌟"}
+              {title: "35+ Years Excellence", icon: "🌟"},
+              {title: "Global Recognition", icon: "🌏"}
             ].map((item, index) => (
               <div 
                 key={index}
@@ -490,9 +490,9 @@ export default function Home() {
       
       {/* Gallery Section - Images reduced by 5% */}
       <div className="relative lg:ml-6 mt-8 md:mt-0 h-full flex flex-col justify-center">
-        <div className="relative z-10 grid grid-cols-2 gap-2 sm:gap-3 h-full max-h-[665px]"> {/* Reduced gap and max-height */}
-          {/* Main image - Reduced size */}
-          <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 hover:-translate-y-2 group scale-95"> {/* Added scale-95 */}
+        <div className="relative z-10 hidden md:grid grid-cols-2 gap-2 sm:gap-3 h-full max-h-[665px]">
+          {/* Main image */}
+          <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 hover:-translate-y-2">
             <div className="absolute inset-0 border-4 border-white/80 rounded-2xl z-20 pointer-events-none"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
             <Image
@@ -507,8 +507,8 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Secondary image - Reduced size */}
-          <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 hover:-translate-y-2 group scale-95"> {/* Added scale-95 */}
+          {/* Secondary image */}
+          <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 hover:-translate-y-2">
             <div className="absolute inset-0 border-4 border-white/80 rounded-2xl z-20 pointer-events-none"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
             <Image
@@ -528,59 +528,31 @@ export default function Home() {
             </div>
           </div>
           
-          {/* Swiper gallery - Reduced size */}
-          <div className="col-span-2 relative h-52 sm:h-60 md:h-68 lg:h-72 rounded-2xl overflow-hidden mt-3"> {/* Reduced height */}
-            <div className="absolute inset-0 border-4 border-white/80 rounded-2xl z-20 pointer-events-none"></div>
-            <Swiper
-              effect={'fade'}
-              grabCursor={true}
-              centeredSlides={true}
-              slidesPerView={1}
-              autoplay={{
-                delay: 4000,
-                disableOnInteraction: false,
-              }}
-              pagination={{ 
-                clickable: true,
-                el: '.custom-pagination',
-                type: 'bullets',
-                bulletClass: 'swiper-bullet',
-                bulletActiveClass: 'swiper-bullet-active'
-              }}
-              modules={[EffectFade, Pagination, Autoplay]}
-              className="h-full w-full"
-            >
-              <SwiperSlide className="bg-transparent">
-                <div className="relative h-full w-full rounded-2xl overflow-hidden group">
-                  <Image
-                    src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG_9244-scaled.jpg"
-                    alt="Kathak Performance"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 100vw"
-                    className="rounded-2xl transform transition-transform duration-700 group-hover:scale-105 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/20 to-transparent z-10"></div>
+        </div>
+        {/* Mobile slider */}
+        <div className="md:hidden mt-6">
+          <Swiper
+            grabCursor
+            centeredSlides
+            slidesPerView={1}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            pagination={{ clickable: true, el: '.custom-pagination', bulletClass: 'swiper-bullet', bulletActiveClass: 'swiper-bullet-active' }}
+            modules={[Pagination, Autoplay]}
+            className="h-72"
+          >
+            {["https://sanchaykathak.com/cms/wp-content/uploads/2025/06/FB_IMG_1705643899597.jpg","https://sanchaykathak.com/cms/wp-content/uploads/2025/06/2430-scaled.jpg"].map((src,idx) => (
+              <SwiperSlide key={idx} className="bg-transparent">
+                <div className="relative h-full w-full rounded-2xl overflow-hidden">
+                  <Image src={src} alt="Kathak" fill sizes="100vw" className="object-contain" />
                 </div>
               </SwiperSlide>
-              <SwiperSlide className="bg-transparent">
-                <div className="relative h-full w-full rounded-2xl overflow-hidden group">
-                  <Image
-                    src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/2556-scaled.jpg"
-                    alt="Kathak Performance"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 100vw"
-                    className="rounded-2xl transform transition-transform duration-700 group-hover:scale-105 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-l from-black/20 to-transparent z-10"></div>
-                </div>
-              </SwiperSlide>
-            </Swiper>
-            <div className="custom-pagination absolute bottom-2 left-0 right-0 flex justify-center gap-2 z-30"></div>
-          </div>
+            ))}
+          </Swiper>
+          <div className="custom-pagination flex justify-center gap-2 mt-2"></div>
+        </div>
         </div>
       </div>
     </div>
-  </div>
   
   {/* Animated decorative elements */}
   <div className="absolute top-1/4 right-6 w-6 h-6 rounded-full bg-[#C73664]/10 animate-float hidden md:block"></div>

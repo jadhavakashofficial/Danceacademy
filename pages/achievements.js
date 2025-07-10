@@ -24,20 +24,26 @@ export default function Achievements() {
         <title>Achievements | Sanchay Kathak Nrutya Academy</title>
         <meta name="description" content="Awards and recognitions of the academy" />
       </Head>
-      <div className="max-w-2xl mx-auto px-4 py-20">
-        <h1 className="text-3xl font-bold text-center mb-8">Awards</h1>
-        <h2 className="text-2xl font-semibold mb-4">Guru Vaishali Palsule-Dhongade</h2>
-        <ul className="list-disc pl-5 space-y-1 mb-8">
-          {vaishaliAwards.map(a => (
-            <li key={a.id}>{a.title} ({a.year})</li>
-          ))}
-        </ul>
-        <h2 className="text-2xl font-semibold mb-4">Rajashree Dhongade</h2>
-        <ul className="list-disc pl-5 space-y-1">
-          {rajashreeAwards.map(a => (
-            <li key={a.id}>{a.title} ({a.year})</li>
-          ))}
-        </ul>
+      <div className="max-w-4xl mx-auto px-4 py-16 space-y-12">
+        <h1 className="text-3xl font-bold text-center mb-4">Awards</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white rounded-xl shadow p-6">
+            <h2 className="text-xl font-semibold mb-3">Guru Vaishali Palsule-Dhongade</h2>
+            <ul className="list-disc pl-5 space-y-1 text-sm">
+              {vaishaliAwards.map(a => (
+                <li key={a.id}>{a.title} ({a.year})</li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-white rounded-xl shadow p-6">
+            <h2 className="text-xl font-semibold mb-3">Rajashree Dhongade</h2>
+            <ul className="list-disc pl-5 space-y-1 text-sm">
+              {rajashreeAwards.map(a => (
+                <li key={a.id}>{a.title} ({a.year})</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </Layout>
   );
