@@ -385,189 +385,49 @@ export default function Home() {
         className="fixed top-0 left-0 w-full h-full -z-10"
       ></canvas>
 
-     <section className="relative min-h-screen overflow-hidden pt-16 md:pt-20">
-  {/* Enhanced gradient background */}
-  <div 
-    className="absolute inset-0 z-0"
-    style={{ 
-      background: 'linear-gradient(135deg, #FFE8DC, #C2E9FB, #FFD9C0, #00FFF7)',
-      backgroundSize: '300% 300%',
-      animation: 'gradientShift 25s ease infinite'
-    }}
-  ></div>
-  
-  {/* Dynamic wave pattern */}
-  <div className="absolute inset-0 z-0 opacity-15" style={{
-    backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,50 C30,-10 70,110 100,50 L100,100 L0,100 Z' fill='%23C73664'/%3E%3C/svg%3E")`,
-    backgroundSize: '1200px',
-    backgroundPosition: 'bottom center',
-    maskImage: 'radial-gradient(circle at center, black 20%, transparent 70%)'
-  }}></div>
-  
-  {/* Main content container */}
-  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14 lg:py-18 z-10"> {/* Reduced top padding */}
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-stretch">
-      
-      {/* Content Section - Adjusted with negative top margin */}
-      <div className="flex flex-col justify-center space-y-6 md:space-y-8 z-10 pt-4 md:-mt-5">{/* Added negative top margin */}
-        <div className="space-y-6 md:space-y-8">
-          {/* Academy Logo */}
-          <div className="flex justify-center md:justify-start animate-fadeInUp">
-            <Image
-              src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/Sanchay-1.png"
-              alt="Sanchay Kathak Nrutya Academy"
-              width={250}
-              height={150}
-              className="object-contain"
-            />
-          </div>
-          <p className="text-center md:text-left font-semibold" style={{fontFamily: 'Poppins, sans-serif'}}>
-            Established in 1990
-          </p>
-          
-          {/* Subheading with emphasis */}
-          <p 
-            className="text-lg md:text-xl lg:text-2xl leading-relaxed max-w-2xl animate-fadeInUp" 
-            style={{ 
-              color: '#2A4365',
-              animationDelay: '0.3s',
-              fontFamily: 'Poppins, sans-serif'
-            }}
-          >
-            <span className="font-bold">35+ Years</span> of Dance Excellence at Pimpri-Chinchwad's <span className="font-bold text-[#C73664]">Premier Kathak Academy</span>
-          </p>
 
-          {/* Stats grid with hover effects */}
-          <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 animate-fadeInUp" style={{ animationDelay: '0.5s' }}>
-            {[
-              {title: "35+ Years Excellence", icon: "🌟"},
-              {title: "Global Recognition", icon: "🌏"}
-            ].map((item, index) => (
-              <div 
-                key={index}
-                className="bg-white/95 p-3 sm:p-4 rounded-xl shadow-md border border-[#f0f0f0] text-center transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group hover:bg-gradient-to-br hover:from-white hover:to-[#FFE8DC]"
-              >
-                <div className="text-2xl mb-2 transition-transform duration-300 group-hover:scale-110">{item.icon}</div>
-                <h3 className="font-bold text-[#0C1B33] text-sm sm:text-base" style={{ fontFamily: 'Poppins, sans-serif' }}>{item.title}</h3>
-                <div className="mt-1 sm:mt-2 w-6 sm:w-8 h-0.5 bg-[#C73664] mx-auto rounded-full transition-all duration-300 group-hover:w-10 group-hover:bg-[#00A3A3]"></div>
-              </div>
-            ))}
-          </div>
-
-          {/* Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-fadeInUp" style={{ animationDelay: '0.7s' }}>
-            <Link
-              href="/contact"
-              className="group relative px-5 py-2.5 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2 overflow-hidden"
-              style={{ 
-                background: 'linear-gradient(90deg, #C73664, #B300B3)',
-                fontFamily: 'Poppins, sans-serif',
-                minWidth: '230px'
-              }}
-            >
-              <span className="absolute inset-0 bg-gradient-to-r from-[#C73664]/0 to-[#C73664]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-              <span className="relative z-10 text-[#FDF9F0] text-center">
-                Start Your Kathak Journey
-              </span>
-              <span className="relative z-10 text-[#FDF9F0] transform transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </Link>
-            <Link 
-              href="/about"
-              className="group relative bg-white/95 px-5 py-2.5 sm:px-6 sm:py-3 md:px-7 md:py-3.5 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 border border-[#C73664] shadow-md hover:shadow-lg flex items-center justify-center space-x-2 overflow-hidden"
-              style={{ 
-                color: '#C73664',
-                fontFamily: 'Poppins, sans-serif',
-                minWidth: '180px'
-              }}
-            >
-              <span className="absolute inset-0 bg-[#C73664]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              <span className="relative z-10">Meet Our Gurus</span>
-              <span className="relative z-10 transform transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </Link>
-          </div>
-        </div>
+<section className="relative bg-[#FFFAF5] pt-16 pb-12">
+  <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 items-center px-4">
+    <div className="space-y-6 text-center lg:text-left">
+      <div>
+        <Image src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/Sanchay-1.png" alt="Sanchay Kathak Nrutya Academy" width={220} height={120} className="mx-auto lg:mx-0 object-contain" />
+        <p className="mt-2 text-sm font-medium">Established in 1990</p>
       </div>
-      
-      {/* Gallery Section - Images reduced by 5% */}
-      <div className="relative lg:ml-6 mt-8 md:mt-0 h-full flex flex-col justify-center">
-        <div className="relative z-10 hidden md:grid grid-cols-2 gap-2 sm:gap-3 h-full max-h-[665px]">
-          {/* Main image */}
-          <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 hover:-translate-y-2">
-            <div className="absolute inset-0 border-4 border-white/80 rounded-2xl z-20 pointer-events-none"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
-            <Image
-              src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/FB_IMG_1705643899597.jpg"
-              alt="Kathak Performer"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="rounded-2xl object-contain"
-            />
-            <div className="absolute bottom-3 left-3 z-20 text-white text-xs sm:text-sm font-medium text-shadow" style={{ fontFamily: 'Poppins, sans-serif' }}>
-              Traditional Kathak
-            </div>
-          </div>
-          
-          {/* Secondary image */}
-          <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl transform transition-transform duration-500 hover:-translate-y-2">
-            <div className="absolute inset-0 border-4 border-white/80 rounded-2xl z-20 pointer-events-none"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10"></div>
-            <Image
-              src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/2430-scaled.jpg"
-              alt="Kathak Performer"
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="rounded-2xl object-contain"
-            />
-            <div className="absolute top-3 right-3 z-20">
-              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-[#C73664] rounded-full flex items-center justify-center text-white shadow-md transform transition-transform duration-300 group-hover:scale-110">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        {/* Mobile slider */}
-        <div className="md:hidden mt-6">
-          <Swiper
-            grabCursor
-            centeredSlides
-            slidesPerView={1}
-            autoplay={{ delay: 4000, disableOnInteraction: false }}
-            pagination={{ clickable: true, el: '.custom-pagination', bulletClass: 'swiper-bullet', bulletActiveClass: 'swiper-bullet-active' }}
-            modules={[Pagination, Autoplay]}
-            className="h-72"
-          >
-            {["https://sanchaykathak.com/cms/wp-content/uploads/2025/06/FB_IMG_1705643899597.jpg","https://sanchaykathak.com/cms/wp-content/uploads/2025/06/2430-scaled.jpg"].map((src,idx) => (
-              <SwiperSlide key={idx} className="bg-transparent">
-                <div className="relative h-full w-full rounded-2xl overflow-hidden">
-                  <Image src={src} alt="Kathak" fill sizes="100vw" className="object-contain" />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div className="custom-pagination flex justify-center gap-2 mt-2"></div>
-        </div>
-        </div>
+      <p className="text-xl font-semibold text-[#0C1B33]"><span className="text-[#C73664] font-bold">35+ Years</span> of Dance Excellence</p>
+      <div className="grid grid-cols-2 gap-3 max-w-xs mx-auto lg:mx-0">
+        <div className="bg-white rounded-lg shadow py-3 text-sm font-medium">35+ Years Excellence</div>
+        <div className="bg-white rounded-lg shadow py-3 text-sm font-medium">Global Recognition</div>
+      </div>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <Link href="/contact" className="bg-[#C73664] text-white px-5 py-2 rounded-md font-semibold">Start Your Kathak Journey</Link>
+        <Link href="/about" className="border border-[#C73664] text-[#C73664] px-5 py-2 rounded-md font-semibold">Meet Our Gurus</Link>
       </div>
     </div>
-  
-  {/* Animated decorative elements */}
-  <div className="absolute top-1/4 right-6 w-6 h-6 rounded-full bg-[#C73664]/10 animate-float hidden md:block"></div>
-  <div className="absolute top-1/3 left-16 w-5 h-5 rounded-full bg-[#00A3A3]/10 animate-float hidden md:block" style={{ animationDelay: '1s' }}></div>
-  <div className="absolute bottom-1/4 right-1/4 w-4 h-4 rounded-full bg-[#C73664]/10 animate-float hidden md:block" style={{ animationDelay: '2s' }}></div>
-  
-  {/* Scroll indicator */}
-  <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-    <div className="w-6 h-10 rounded-full border-2 border-[#C73664] flex justify-center p-1">
-      <div className="w-1.5 h-1.5 bg-[#C73664] rounded-full animate-scroll"></div>
+    <div className="mt-8 lg:mt-0">
+      <div className="hidden md:grid grid-cols-2 gap-4">
+        <div className="relative aspect-[3/4] w-full">
+          <Image src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/FB_IMG_1705643899597.jpg" alt="Kathak" fill className="object-cover rounded-2xl" />
+        </div>
+        <div className="relative aspect-[3/4] w-full">
+          <Image src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/2430-scaled.jpg" alt="Kathak" fill className="object-cover rounded-2xl" />
+        </div>
+      </div>
+      <div className="md:hidden">
+        <Swiper grabCursor slidesPerView={1} pagination={{ clickable: true, el: '.custom-pagination', bulletClass: 'swiper-bullet', bulletActiveClass: 'swiper-bullet-active' }} modules={[Pagination]} className="h-72">
+          {["https://sanchaykathak.com/cms/wp-content/uploads/2025/06/FB_IMG_1705643899597.jpg", "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/2430-scaled.jpg"].map((src, idx) => (
+            <SwiperSlide key={idx} className="bg-transparent">
+              <div className="relative h-full w-full rounded-2xl overflow-hidden">
+                <Image src={src} alt="Kathak" fill className="object-cover" />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="custom-pagination flex justify-center gap-2 mt-2"></div>
+      </div>
     </div>
   </div>
 </section>
-
-<section 
+<section
   className="py-12 md:py-16 relative overflow-hidden"
   style={{ 
     background: 'linear-gradient(135deg, #FDF9F0 0%, #FFF5ED 100%)',
