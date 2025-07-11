@@ -73,7 +73,8 @@ export default function HeroSection() {
       </div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+        {/* Top Section: Logo + Images */}
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 mb-16">
           
           {/* Left Content - Centered and responsive */}
           <div className="w-full lg:w-2/5 flex flex-col items-center lg:items-start">
@@ -126,21 +127,6 @@ export default function HeroSection() {
                   <span className="relative z-10">Meet Gurus</span>
                   <span className="relative z-10 transform transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </Link>
-              </div>
-
-              {/* Achievement Cards - Desktop Only */}
-              <div className="hidden md:grid grid-cols-2 gap-3 mt-8">
-                {achievementCards.map((card) => (
-                  <div 
-                    key={card.id}
-                    className={`bg-gradient-to-br ${card.bgColor} rounded-xl p-3 shadow-sm border border-white/50 backdrop-blur-sm transition-all duration-300 hover:shadow-md hover:scale-[1.02]`}
-                  >
-                    <div className="flex items-center">
-                      <span className="text-2xl mr-2">{card.icon}</span>
-                      <span className="text-xs font-medium text-[#2A4365]">{card.title}</span>
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
@@ -208,6 +194,23 @@ export default function HeroSection() {
                 </SwiperSlide>
               </Swiper>
             </div>
+          </div>
+        </div>
+
+        {/* Full-width Achievement Cards Section */}
+        <div className="hidden md:block w-full">
+          <div className="grid grid-cols-6 gap-4 mx-auto">
+            {achievementCards.map((card) => (
+              <div 
+                key={card.id}
+                className={`bg-gradient-to-br ${card.bgColor} rounded-xl p-4 shadow-md border border-white/70 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:scale-[1.02]`}
+              >
+                <div className="flex flex-col items-center text-center">
+                  <span className="text-3xl mb-2">{card.icon}</span>
+                  <span className="text-xs font-semibold text-[#2A4365]">{card.title}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
