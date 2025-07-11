@@ -22,6 +22,46 @@ export default function HeroSection() {
     }
   }, []);
 
+  // Achievement cards data
+  const achievementCards = [
+    { 
+      id: 1, 
+      title: "Best Kathak Dance Academy In Pune", 
+      icon: "🏆",
+      bgColor: "from-[#FFF4E6] to-[#FFE8D1]"
+    },
+    { 
+      id: 2, 
+      title: "Global Recognization", 
+      icon: "🌍",
+      bgColor: "from-[#E6F7FF] to-[#D1F0FF]"
+    },
+    { 
+      id: 3, 
+      title: "35+ Years Of Experience", 
+      icon: "📅",
+      bgColor: "from-[#F0F9FF] to-[#E1F3FF]"
+    },
+    { 
+      id: 4, 
+      title: "Award Winning Academy", 
+      icon: "🏅",
+      bgColor: "from-[#FFF8E6] to-[#FFF1D1]"
+    },
+    { 
+      id: 5, 
+      title: "4+ Prestigious Affiliations", 
+      icon: "🤝",
+      bgColor: "from-[#F0F5FF] to-[#E1EAFF]"
+    },
+    { 
+      id: 6, 
+      title: "30+ Visharad Graduates", 
+      icon: "🎓",
+      bgColor: "from-[#F9F0FF] to-[#F2E1FF]"
+    }
+  ];
+
   return (
     <section className="relative min-h-screen overflow-hidden pt-16 md:pt-20 lg:pt-24 bg-gradient-to-br from-[#FFE8DC] via-[#C2E9FB] to-[#FFD9C0]">
       {/* Cleaner background with subtle pattern */}
@@ -86,6 +126,21 @@ export default function HeroSection() {
                   <span className="relative z-10">Meet Gurus</span>
                   <span className="relative z-10 transform transition-transform duration-300 group-hover:translate-x-1">→</span>
                 </Link>
+              </div>
+
+              {/* Achievement Cards - Desktop Only */}
+              <div className="hidden md:grid grid-cols-2 gap-3 mt-8">
+                {achievementCards.map((card) => (
+                  <div 
+                    key={card.id}
+                    className={`bg-gradient-to-br ${card.bgColor} rounded-xl p-3 shadow-sm border border-white/50 backdrop-blur-sm transition-all duration-300 hover:shadow-md hover:scale-[1.02]`}
+                  >
+                    <div className="flex items-center">
+                      <span className="text-2xl mr-2">{card.icon}</span>
+                      <span className="text-xs font-medium text-[#2A4365]">{card.title}</span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
