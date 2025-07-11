@@ -24,46 +24,47 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen overflow-hidden pt-16 md:pt-20 lg:pt-24 bg-gradient-to-br from-[#FFE8DC] via-[#C2E9FB] to-[#FFD9C0]">
-      <div className="absolute inset-0 z-0 opacity-5">
+      {/* Cleaner background with subtle pattern */}
+      <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,50 C30,30 70,70 100,50' stroke='%23C73664' stroke-width='0.8' fill='none'/%3E%3C/svg%3E")`,
-          backgroundSize: '300px',
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='50' cy='50' r='1' fill='%23C73664' fill-opacity='0.2'/%3E%3C/svg%3E")`,
+          backgroundSize: '40px',
         }}></div>
       </div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 lg:py-20 z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-10">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
           
-          {/* Left Content - Slightly reduced size */}
-          <div className="w-full lg:w-2/5 flex flex-col items-center justify-center">
-            <div className="mb-6 w-full max-w-xs">
-              {/* Responsive logo - slightly smaller */}
-              <div className="flex justify-center mb-4">
+          {/* Left Content - Centered and responsive */}
+          <div className="w-full lg:w-2/5 flex flex-col items-center lg:items-start">
+            <div className="mb-6 w-full max-w-xs md:max-w-md">
+              {/* Responsive logo with consistent padding */}
+              <div className="flex justify-center lg:justify-start mb-4 px-4">
                 <Image
                   src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/Sanchay-1.png"
                   alt="Sanchay Kathak Nrutya Academy"
-                  width={isMobile ? 200 : 240}
-                  height={isMobile ? 80 : 96}
+                  width={isMobile ? 200 : 260}
+                  height={isMobile ? 80 : 100}
                   className="object-contain transition-all"
                   priority
                 />
               </div>
               
-              {/* Established text - smaller and elegant */}
-              <div className="mb-8 text-center">
+              {/* Established text with cleaner design */}
+              <div className="mb-8 text-center lg:text-left">
                 <div className="inline-block relative">
                   <p className="text-[#2A4365] text-base md:text-lg font-medium tracking-wide relative z-10">
                     Established in 1990
                   </p>
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-28 h-0.5 bg-[#C73664] rounded-full"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-[#C73664] rounded-full"></div>
                 </div>
               </div>
               
-              {/* CTA Buttons - reduced size */}
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              {/* CTA Buttons with consistent spacing */}
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                 <Link
                   href="/contact"
-                  className="group relative px-4 py-2.5 rounded-lg font-bold text-sm md:text-base transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 overflow-hidden"
+                  className="group relative px-5 py-3 rounded-lg font-bold text-sm md:text-base transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center space-x-2 overflow-hidden"
                   style={{ 
                     background: 'linear-gradient(90deg, #C73664, #B300B3)', 
                     fontFamily: 'Poppins, sans-serif',
@@ -75,7 +76,7 @@ export default function HeroSection() {
                 </Link>
                 <Link
                   href="/about"
-                  className="group relative bg-white px-4 py-2.5 rounded-lg font-bold text-sm md:text-base transition-all duration-300 border border-[#C73664] shadow-sm hover:shadow-md flex items-center justify-center space-x-2 overflow-hidden"
+                  className="group relative bg-white px-5 py-3 rounded-lg font-bold text-sm md:text-base transition-all duration-300 border border-[#C73664] shadow-sm hover:shadow-md flex items-center justify-center space-x-2 overflow-hidden"
                   style={{ 
                     color: '#C73664', 
                     fontFamily: 'Poppins, sans-serif',
@@ -89,17 +90,17 @@ export default function HeroSection() {
             </div>
           </div>
           
-          {/* Right Images - Increased size */}
+          {/* Image Gallery - Improved responsiveness */}
           <div className="w-full lg:w-3/5 flex justify-center">
-            {/* Desktop: Two larger images */}
-            <div className="hidden md:grid grid-cols-2 gap-5 w-full max-w-2xl">
+            {/* Desktop: Two images with proper headroom */}
+            <div className="hidden md:grid grid-cols-2 gap-6 w-full max-w-2xl">
               <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-xl border-4 border-white transform transition-all duration-300 hover:scale-[1.02]">
                 <Image
                   src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/FB_IMG_1705643899597.jpg"
                   alt="Kathak Performer"
                   fill
                   sizes="(max-width: 768px) 50vw, 30vw"
-                  className="object-cover"
+                  className="object-cover object-top"
                   priority
                 />
               </div>
@@ -109,13 +110,13 @@ export default function HeroSection() {
                   alt="Kathak Performer"
                   fill
                   sizes="(max-width: 768px) 50vw, 30vw"
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
               </div>
             </div>
             
-            {/* Mobile: Single image slider */}
-            <div className="md:hidden w-full max-w-md h-[320px]">
+            {/* Mobile: Slider with proper headroom */}
+            <div className="md:hidden w-full max-w-md aspect-[3/4] h-auto max-h-[80vh]">
               <Swiper
                 modules={[Autoplay, EffectFade]}
                 effect="fade"
@@ -134,7 +135,7 @@ export default function HeroSection() {
                       alt="Kathak Performer"
                       fill
                       sizes="100vw"
-                      className="object-cover"
+                      className="object-cover object-top"
                       priority
                     />
                   </div>
@@ -146,7 +147,7 @@ export default function HeroSection() {
                       alt="Kathak Performer"
                       fill
                       sizes="100vw"
-                      className="object-cover"
+                      className="object-cover object-top"
                     />
                   </div>
                 </SwiperSlide>
@@ -155,6 +156,10 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
+      
+      {/* Decorative elements */}
+      <div className="absolute top-10 right-10 w-24 h-24 rounded-full bg-[#C73664] opacity-10 blur-xl z-0"></div>
+      <div className="absolute bottom-20 left-10 w-16 h-16 rounded-full bg-[#2A4365] opacity-10 blur-xl z-0"></div>
       
       {/* Scroll indicator - subtle */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
