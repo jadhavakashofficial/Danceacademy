@@ -52,18 +52,18 @@ export default function Achievements() {
         })}} />
       </Head>
       
-      <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-purple-50 to-pink-50 py-6 md:py-10 lg:py-16">
+      <div className="min-h-screen bg-[#FDF9F0] py-6 md:py-10 lg:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-16">
           {/* Hero Section */}
           <div className="text-center mb-16 relative">
-            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-48 h-48 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-            <div className="absolute top-0 right-20 w-48 h-48 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-            <div className="absolute -bottom-8 left-20 w-48 h-48 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-            
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 relative z-10">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Achievements</span>
+            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-32 h-32 bg-[#C73664]/10 rounded-full filter blur-xl opacity-70 animate-blob"></div>
+            <div className="absolute top-0 right-20 w-32 h-32 bg-[#B300B3]/10 rounded-full filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div className="absolute -bottom-8 left-20 w-32 h-32 bg-[#C73664]/10 rounded-full filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 relative z-10">
+              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C73664] to-[#B300B3]">Achievements</span>
             </h1>
-            <div className="w-32 h-1.5 bg-gradient-to-r from-indigo-400 to-purple-500 mx-auto rounded-full mb-6"></div>
+            <div className="w-32 h-1.5 bg-gradient-to-r from-[#C73664] to-[#B300B3] mx-auto rounded-full mb-6"></div>
             <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto relative z-10">
               Celebrating excellence and recognition in the world of Kathak
             </p>
@@ -86,30 +86,30 @@ export default function Achievements() {
                 </div>
                 <div className="mt-6 text-center">
                   <h2 className="text-2xl font-bold text-gray-800">Guru Vaishali Palsule-Dhongade</h2>
-                  <p className="text-indigo-600 italic mt-1">Founder & Director</p>
-                  <div className="w-24 h-1 bg-gradient-to-r from-indigo-400 to-purple-500 rounded-full mx-auto my-4"></div>
+                  <p className="text-[#C73664] italic mt-1">Founder & Director</p>
+                  <div className="w-24 h-1 bg-gradient-to-r from-[#C73664] to-[#B300B3] rounded-full mx-auto my-4"></div>
                 </div>
               </div>
               
               <div className="p-6">
                 <div className="flex items-center justify-center mb-6">
-                  <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-10 h-10 rounded-full bg-[#C73664]/10 flex items-center justify-center mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#C73664]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                     </svg>
                   </div>
                   <h3 className="text-xl font-semibold text-gray-800">Awards & Recognitions</h3>
                 </div>
-                
+
                 <ul className="space-y-3">
                   {vaishaliAwards.map(award => (
-                    <li 
-                      key={award.id} 
-                      className="p-4 bg-indigo-50 rounded-lg border border-indigo-100 transition-all duration-200 hover:shadow-sm hover:border-indigo-200"
+                    <li
+                      key={award.id}
+                      className="p-4 bg-[#FFF5ED] rounded-lg border border-[#FFE8DC] transition-all duration-200 hover:shadow-sm hover:border-[#C73664]/30"
                     >
                       <div className="flex justify-between items-center">
                         <p className="text-gray-800 font-medium">{award.title}</p>
-                        <span className="bg-indigo-100 text-indigo-800 text-sm px-2.5 py-1 rounded-full font-medium">
+                        <span className="bg-[#C73664]/10 text-[#C73664] text-sm px-2.5 py-1 rounded-full font-medium">
                           {award.year}
                         </span>
                       </div>

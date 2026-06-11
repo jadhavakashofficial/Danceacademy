@@ -39,7 +39,7 @@ export default function Footer() {
       {/* Premium Animated Background */}
       <div className="absolute inset-0 overflow-hidden z-0">
         {/* Golden Particles */}
-        {mounted && [...Array(30)].map((_, i) => (
+        {mounted && [...Array(8)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full"

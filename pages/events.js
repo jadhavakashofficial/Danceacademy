@@ -53,18 +53,18 @@ export default function Events() {
         <meta name="twitter:image" content="https://www.sanchaykathak.com/images/2430-scaled.jpg" />
       </Head>
       
-      <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-purple-50 to-pink-50 py-6 md:py-10 lg:py-16">
+      <div className="min-h-screen bg-[#FDF9F0] py-6 md:py-10 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-16">
           {/* Hero Section */}
           <div className="text-center mb-16 relative">
-            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-48 h-48 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-            <div className="absolute top-0 right-20 w-48 h-48 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-            <div className="absolute -bottom-8 left-20 w-48 h-48 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-            
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 relative z-10">
-              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">Events</span>
+            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-32 h-32 bg-[#C73664]/10 rounded-full filter blur-xl opacity-70 animate-blob"></div>
+            <div className="absolute top-0 right-20 w-32 h-32 bg-[#B300B3]/10 rounded-full filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div className="absolute -bottom-8 left-20 w-32 h-32 bg-[#C73664]/10 rounded-full filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 relative z-10">
+              Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C73664] to-[#B300B3]">Events</span>
             </h1>
-            <div className="w-40 h-1.5 bg-gradient-to-r from-indigo-400 to-purple-500 mx-auto rounded-full mb-6"></div>
+            <div className="w-40 h-1.5 bg-gradient-to-r from-[#C73664] to-[#B300B3] mx-auto rounded-full mb-6"></div>
             <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto relative z-10">
               Experience the magic of Kathak through our performances, workshops, and record-breaking events
             </p>

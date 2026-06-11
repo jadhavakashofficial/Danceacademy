@@ -232,13 +232,13 @@ export default function Gallery() {
       </Head>
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-purple-900 to-indigo-800 text-white pt-28 pb-16 px-4">
+      <div className="bg-gradient-to-b from-[#0C1B33] via-[#1a2d4d] to-[#0C1B33] text-white pt-28 pb-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Gallery of Excellence</h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">Gallery of Excellence</h1>
+          <p className="text-base sm:text-xl md:text-2xl max-w-3xl mx-auto mb-10">
             35 years of Kathak tradition captured in moments of grace, dedication, and artistic expression
           </p>
-          <div className="flex justify-center space-x-6">
+          <div className="flex justify-center flex-wrap gap-3 sm:gap-6">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
               <div className="text-3xl font-bold">{galleryImages.length}+</div>
               <div>Moments</div>

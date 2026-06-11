@@ -404,7 +404,7 @@ export default function About() {
       {/* Hero Section */}
       <section 
         id="hero"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28"
         style={{ 
           background: 'linear-gradient(135deg, #FDF9F0 0%, #FFF5ED 25%, #FFFCF7 50%, #FFF8F0 75%, #FDF9F0 100%)',
           backgroundSize: '400% 400%',
