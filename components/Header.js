@@ -6,24 +6,13 @@ import Image from 'next/image'
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
     }
-    
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
-    
     window.addEventListener('scroll', handleScroll)
-    window.addEventListener('mousemove', handleMouseMove)
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('mousemove', handleMouseMove)
-    }
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const navItems = [
@@ -50,32 +39,11 @@ export default function Header() {
           borderBottom: '1px solid rgba(236, 72, 153, 0.08)'
         }}
       >
-        {/* Magic Floating Particles */}
+        {/* Static Floating Particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div 
-            className="absolute w-1 h-1 bg-pink-400 rounded-full animate-float opacity-70"
-            style={{
-              left: `${Math.sin(mousePosition.x * 0.01) * 12 + 20}%`,
-              top: `${Math.cos(mousePosition.y * 0.01) * 15 + 30}%`,
-              animationDelay: '0s'
-            }}
-          ></div>
-          <div 
-            className="absolute w-1.5 h-1.5 bg-orange-400 rounded-full animate-float opacity-60"
-            style={{
-              left: `${Math.cos(mousePosition.x * 0.008) * 10 + 70}%`,
-              top: `${Math.sin(mousePosition.y * 0.008) * 12 + 40}%`,
-              animationDelay: '2s'
-            }}
-          ></div>
-          <div 
-            className="absolute w-0.5 h-0.5 bg-pink-500 rounded-full animate-float opacity-80"
-            style={{
-              left: `${Math.sin(mousePosition.x * 0.012) * 15 + 85}%`,
-              top: `${Math.cos(mousePosition.y * 0.012) * 10 + 25}%`,
-              animationDelay: '1s'
-            }}
-          ></div>
+          <div className="absolute w-1 h-1 bg-pink-400 rounded-full animate-float opacity-70" style={{ left: '20%', top: '30%', animationDelay: '0s' }} />
+          <div className="absolute w-1.5 h-1.5 bg-orange-400 rounded-full animate-float opacity-60" style={{ left: '70%', top: '40%', animationDelay: '2s' }} />
+          <div className="absolute w-0.5 h-0.5 bg-pink-500 rounded-full animate-float opacity-80" style={{ left: '85%', top: '25%', animationDelay: '1s' }} />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -90,7 +58,7 @@ export default function Header() {
                 {/* Logo Container */}
                 <div className="relative w-full h-full transform group-hover:scale-110 group-hover:rotate-1 transition-all duration-500">
                   <Image
-                    src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/Sanchay-1.png"
+                    src="/images/Sanchay-1.png"
                     alt="Sanchay Kathak Dance Academy"
                     width={isScrolled ? 48 : 56}
                     height={isScrolled ? 48 : 56}

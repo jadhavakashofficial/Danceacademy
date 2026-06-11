@@ -1,0 +1,23 @@
+{
+  "name": "Sanchay Kathak Nrutya Academy",
+  "short_name": "Sanchay Kathak",
+  "description": "Pimpri-Chinchwad's first Kathak dance academy — training across Banaras, Lucknow & Jaipur Gharanas since 1990.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDF9F0",
+  "theme_color": "#C73664",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/images/Sanchay-1.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

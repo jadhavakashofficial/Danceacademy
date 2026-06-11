@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function ContactSection() {
+  // Random decorative notes render only after mount to avoid SSR hydration mismatches
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const [formErrors, setFormErrors] = useState({});
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -40,7 +43,7 @@ export default function ContactSection() {
     >
       {/* Floating Elements */}
       <div className="absolute inset-0 z-0">
-        {[...Array(12)].map((_, i) => (
+        {mounted && [...Array(12)].map((_, i) => (
           <div
             key={i}
             className="absolute text-[#C73664] text-3xl opacity-15"

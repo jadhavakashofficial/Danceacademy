@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,20 +6,6 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 export default function HeroSection() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const handleResize = () => {
-        setIsMobile(window.innerWidth < 768);
-      };
-      
-      handleResize();
-      window.addEventListener('resize', handleResize);
-      
-      return () => window.removeEventListener('resize', handleResize);
-    }
-  }, []);
 
   // Achievement cards data
   const achievementCards = [
@@ -82,11 +67,11 @@ export default function HeroSection() {
               {/* Responsive logo with consistent padding */}
               <div className="flex justify-center lg:justify-start mb-4 px-4">
                 <Image
-                  src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/Sanchay-1.png"
+                  src="/images/Sanchay-1.png"
                   alt="Sanchay Kathak Nrutya Academy"
-                  width={isMobile ? 200 : 260}
-                  height={isMobile ? 80 : 100}
-                  className="object-contain transition-all"
+                  width={260}
+                  height={100}
+                  className="w-[200px] sm:w-[260px] h-auto object-contain"
                   priority
                 />
               </div>
@@ -137,7 +122,7 @@ export default function HeroSection() {
             <div className="hidden md:grid grid-cols-2 gap-6 w-full max-w-2xl">
               <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-xl border-4 border-white transform transition-all duration-300 hover:scale-[1.02]">
                 <Image
-                  src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/FB_IMG_1705643899597.jpg"
+                  src="/images/FB_IMG_1705643899597.jpg"
                   alt="Kathak Performer"
                   fill
                   sizes="(max-width: 768px) 50vw, 30vw"
@@ -147,7 +132,7 @@ export default function HeroSection() {
               </div>
               <div className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-xl border-4 border-white transform transition-all duration-300 hover:scale-[1.02]">
                 <Image
-                  src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/2430-scaled.jpg"
+                  src="/images/2430-scaled.jpg"
                   alt="Kathak Performer"
                   fill
                   sizes="(max-width: 768px) 50vw, 30vw"
@@ -172,7 +157,7 @@ export default function HeroSection() {
                 <SwiperSlide>
                   <div className="relative h-full w-full">
                     <Image 
-                      src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/FB_IMG_1705643899597.jpg"
+                      src="/images/FB_IMG_1705643899597.jpg"
                       alt="Kathak Performer"
                       fill
                       sizes="100vw"
@@ -184,7 +169,7 @@ export default function HeroSection() {
                 <SwiperSlide>
                   <div className="relative h-full w-full">
                     <Image 
-                      src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/2430-scaled.jpg"
+                      src="/images/2430-scaled.jpg"
                       alt="Kathak Performer"
                       fill
                       sizes="100vw"

@@ -185,7 +185,7 @@ export default function About() {
     {
       name: "Guru Vaishali Palsule-Dhongade",
       title: "Founder & Director",
-      image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1739432659613.jpeg",
+      image: "/images/1739432659613.jpeg",
       qualifications: [
         "M.A. in Kathak from Lalit Kala Kendra",
         "Trained in Banaras, Lucknow, and Jaipur Gharanas",
@@ -201,7 +201,7 @@ export default function About() {
     {
       name: "Rajashree Dhongade",
       title: "Senior Instructor",
-      image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1750233481334.png",
+      image: "/images/1750233481334.png",
       qualifications: [
         "M.A. in Kathak from Pune University",
         "UGC-NET qualified with 95% score",
@@ -250,6 +250,36 @@ export default function About() {
       <Head>
         <title>About Us | Sanchay Kathak Nrutya Academy - 35 Years of Dance Excellence</title>
         <meta name="description" content="Learn about Sanchay Kathak Academy's 35-year journey, our founders, philosophy, and commitment to preserving Kathak traditions while nurturing future artists." />
+        <link rel="canonical" href="https://www.sanchaykathak.com/about" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Sanchay Kathak Nrutya Academy" />
+        <meta property="og:url" content="https://www.sanchaykathak.com/about" />
+        <meta property="og:title" content="About Us | Sanchay Kathak Nrutya Academy - 35 Years of Dance Excellence" />
+        <meta property="og:description" content="Learn about Sanchay Kathak Academy's 35-year journey, our founders, philosophy, and commitment to preserving Kathak traditions while nurturing future artists." />
+        <meta property="og:image" content="https://www.sanchaykathak.com/images/1000926102.jpg" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | Sanchay Kathak Nrutya Academy" />
+        <meta name="twitter:description" content="35 years of Kathak excellence. Learn about our founders, philosophy, and commitment to preserving Indian classical dance." />
+        <meta name="twitter:image" content="https://www.sanchaykathak.com/images/1000926102.jpg" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "url": "https://www.sanchaykathak.com/about",
+          "name": "About Sanchay Kathak Nrutya Academy",
+          "description": "Sanchay Kathak Nrutya Academy was founded in 1990 by Guru Vaishali Palsule-Dhongade as the first Kathak academy in Pimpri-Chinchwad.",
+          "mainEntity": {
+            "@type": "EducationalOrganization",
+            "name": "Sanchay Kathak Nrutya Academy",
+            "foundingDate": "1990",
+            "founder": {
+              "@type": "Person",
+              "name": "Vaishali Palsule-Dhongade",
+              "jobTitle": "Founder & Kathak Exponent"
+            },
+            "url": "https://www.sanchaykathak.com"
+          }
+        })}} />
         <style jsx global>{`
           @keyframes fadeInUp {
             from {

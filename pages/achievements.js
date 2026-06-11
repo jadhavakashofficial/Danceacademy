@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const vaishaliAwards = [
   { id: 1, title: 'Adarsh Nrutya Shikshak Puraskar', year: '2008' },
@@ -22,8 +23,33 @@ export default function Achievements() {
   return (
     <Layout>
       <Head>
-        <title>Achievements | Sanchay Kathak Nrutya Academy</title>
-        <meta name="description" content="Awards and recognitions of the academy" />
+        <title>Achievements & Awards | Sanchay Kathak Nrutya Academy</title>
+        <meta name="description" content="Awards and recognitions earned by Sanchay Kathak Nrutya Academy — Adarsh Nrutya Shikshak Puraskar, Kala Rang Puraskar, Best Choreographer 2024, and more." />
+        <link rel="canonical" href="https://www.sanchaykathak.com/achievements" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Sanchay Kathak Nrutya Academy" />
+        <meta property="og:url" content="https://www.sanchaykathak.com/achievements" />
+        <meta property="og:title" content="Achievements & Awards | Sanchay Kathak Nrutya Academy" />
+        <meta property="og:description" content="Decades of recognition — national and international awards won by the founders and students of Sanchay Kathak Nrutya Academy." />
+        <meta property="og:image" content="https://www.sanchaykathak.com/images/IMG-20250305-WA0030.jpg" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Achievements & Awards | Sanchay Kathak Nrutya Academy" />
+        <meta name="twitter:description" content="National and international awards won by the founders and students of Sanchay Kathak Nrutya Academy." />
+        <meta name="twitter:image" content="https://www.sanchaykathak.com/images/IMG-20250305-WA0030.jpg" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Awards won by Sanchay Kathak Nrutya Academy",
+          "url": "https://www.sanchaykathak.com/achievements",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Adarsh Nrutya Shikshak Puraskar 2008" },
+            { "@type": "ListItem", "position": 2, "name": "Sangeet Kalopasak Puraskar 2016" },
+            { "@type": "ListItem", "position": 3, "name": "Kala Rang Puraskar 2018" },
+            { "@type": "ListItem", "position": 4, "name": "Best Choreographer Award 2024" },
+            { "@type": "ListItem", "position": 5, "name": "Varshant Sitara Puraskar 2021" }
+          ]
+        })}} />
       </Head>
       
       <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-purple-50 to-pink-50 py-6 md:py-10 lg:py-16">
@@ -49,14 +75,13 @@ export default function Achievements() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden border-0 transform transition-all duration-300 hover:-translate-y-1">
               <div className="relative flex flex-col items-center pt-10 pb-6 px-6">
                 {/* Image container with proper positioning */}
-                <div className="relative w-56 h-56 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image 
-                    src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1000926106.jpg" 
+                <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                  <Image
+                    src="/images/1000926106.jpg"
                     alt="Guru Vaishali Palsule-Dhongade"
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="50% 25%"
-                    className="transition-transform duration-500 hover:scale-110"
+                    fill
+                    sizes="(max-width: 640px) 144px, (max-width: 768px) 176px, 224px"
+                    className="object-cover object-top transition-transform duration-500 hover:scale-110"
                   />
                 </div>
                 <div className="mt-6 text-center">
@@ -98,14 +123,13 @@ export default function Achievements() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden border-0 transform transition-all duration-300 hover:-translate-y-1">
               <div className="relative flex flex-col items-center pt-10 pb-6 px-6">
                 {/* Image container with proper positioning */}
-                <div className="relative w-56 h-56 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                  <Image 
-                    src="https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1000069339-scaled.jpg" 
+                <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                  <Image
+                    src="/images/1000069339-scaled.jpg"
                     alt="Rajashree Dhongade"
-                    layout="fill"
-                    objectFit="cover"
-                    objectPosition="50% 25%"
-                    className="transition-transform duration-500 hover:scale-110"
+                    fill
+                    sizes="(max-width: 640px) 144px, (max-width: 768px) 176px, 224px"
+                    className="object-cover object-top transition-transform duration-500 hover:scale-110"
                   />
                 </div>
                 <div className="mt-6 text-center">
@@ -151,12 +175,12 @@ export default function Achievements() {
               Join us to learn from award-winning instructors
             </p>
             <div className="inline-flex flex-col sm:flex-row items-center gap-4">
-              <button className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-full shadow-md transform transition-transform hover:scale-105">
+              <Link href="/contact" className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-full shadow-md transform transition-transform hover:scale-105">
                 Enroll Now
-              </button>
-              <button className="px-6 py-3 bg-white text-indigo-600 border border-indigo-600 font-medium rounded-full shadow-md transform transition-transform hover:scale-105 hover:bg-indigo-50">
+              </Link>
+              <Link href="/gallery" className="px-6 py-3 bg-white text-indigo-600 border border-indigo-600 font-medium rounded-full shadow-md transform transition-transform hover:scale-105 hover:bg-indigo-50">
                 View Gallery
-              </button>
+              </Link>
             </div>
           </div>
         </div>

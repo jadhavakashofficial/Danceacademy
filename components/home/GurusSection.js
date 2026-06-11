@@ -1,10 +1,14 @@
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 export default function GurusSection() {
+  // Random decorative notes render only after mount to avoid SSR hydration mismatches
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const gurus = [
     {
       name: 'Guru Vaishali Palsule-Dhongade',
-      image: 'https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1000926102.jpg',
+      image: '/images/1000926102.jpg',
       role: 'Founder',
       qualifications: [
         'M.A. in Kathak from Lalit Kala Kendra',
@@ -14,7 +18,7 @@ export default function GurusSection() {
     },
     {
       name: 'Rajashree Dhongade',
-      image: 'https://sanchaykathak.com/cms/wp-content/uploads/2025/06/2398-scaled.jpg',
+      image: '/images/2398-scaled.jpg',
       role: 'Instructor',
       qualifications: [
         'UGC-NET qualified with 95% score',
@@ -36,7 +40,7 @@ export default function GurusSection() {
 
       {/* Subtle musical notes */}
       <div className="absolute inset-0 z-0 opacity-5">
-        {[...Array(8)].map((_, i) => (
+        {mounted && [...Array(8)].map((_, i) => (
           <div
             key={i}
             className="absolute text-[#C73664]/30 text-2xl"
@@ -82,7 +86,7 @@ export default function GurusSection() {
               <div className="flex flex-col md:flex-row">
                 {/* Image container */}
                 <div className="w-full md:w-2/5 flex justify-center items-center p-6">
-                  <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                  <div className="relative w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-lg">
                     <Image 
                       src={guru.image} 
                       alt={guru.name} 

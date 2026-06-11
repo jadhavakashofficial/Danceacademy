@@ -37,8 +37,20 @@ export default function Events() {
   return (
     <Layout>
       <Head>
-        <title>Events | Sanchay Kathak Nrutya Academy</title>
-        <meta name="description" content="Upcoming and past events by Sanchay Kathak Nrutya Academy." />
+        <title>Events & Performances | Sanchay Kathak Nrutya Academy</title>
+        <meta name="description" content="Explore performances and events by Sanchay Kathak Nrutya Academy — from international stages in Bangkok & Europe to prestigious national festivals." />
+        <link rel="canonical" href="https://www.sanchaykathak.com/events" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Sanchay Kathak Nrutya Academy" />
+        <meta property="og:url" content="https://www.sanchaykathak.com/events" />
+        <meta property="og:title" content="Events & Performances | Sanchay Kathak Nrutya Academy" />
+        <meta property="og:description" content="International tours, national festivals, workshops, and record-breaking events by Sanchay Kathak Nrutya Academy." />
+        <meta property="og:image" content="https://www.sanchaykathak.com/images/2430-scaled.jpg" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Events & Performances | Sanchay Kathak Nrutya Academy" />
+        <meta name="twitter:description" content="International tours, national festivals, and workshops by Sanchay Kathak Nrutya Academy." />
+        <meta name="twitter:image" content="https://www.sanchaykathak.com/images/2430-scaled.jpg" />
       </Head>
       
       <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-purple-50 to-pink-50 py-6 md:py-10 lg:py-16">

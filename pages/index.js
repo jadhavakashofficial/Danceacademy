@@ -1,5 +1,5 @@
 // pages/index.js
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Layout from '../components/Layout';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -23,26 +23,29 @@ import "yet-another-react-lightbox/styles.css";
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
+  // Random decorative elements are rendered only after mount to avoid SSR hydration mismatches
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   
   const galleryImages = [
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/2231-1-scaled.jpg",
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1000069339-scaled.jpg",
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1000926100.jpg",
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/3095.png",
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/3584.jpg",
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1000926106.jpg",
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/2430-scaled.jpg",
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/2231-1-scaled.jpg"
+    "/images/2231-1-scaled.jpg",
+    "/images/1000069339-scaled.jpg",
+    "/images/1000926100.jpg",
+    "/images/3095.png",
+    "/images/3584.jpg",
+    "/images/1000926106.jpg",
+    "/images/2430-scaled.jpg",
+    "/images/2231-1-scaled.jpg"
   ];
 
   const achievementsImages = [
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20250305-WA0030.jpg",
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20231007-WA0047.jpg",
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20230412-WA0087.jpg",
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG_20240720_131132_031.webp",
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20190903-WA0000.jpg",
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20191005-WA0038.jpg",
-    "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG_20230713_145409_280.webp"
+    "/images/IMG-20250305-WA0030.jpg",
+    "/images/IMG-20231007-WA0047.jpg",
+    "/images/IMG-20230412-WA0087.jpg",
+    "/images/IMG_20240720_131132_031.webp",
+    "/images/IMG-20190903-WA0000.jpg",
+    "/images/IMG-20191005-WA0038.jpg",
+    "/images/IMG_20230713_145409_280.webp"
   ];
 
   const testimonials = [
@@ -130,6 +133,47 @@ export default function Home() {
       <Head>
         <title>Sanchay Kathak Nrutya Academy | Pioneer Kathak Institute in Pimpri-Chinchwad</title>
         <meta name="description" content="Join Pimpri-Chinchwad's first Kathak academy with 35+ years of excellence. Training across Banaras, Lucknow & Jaipur Gharanas under renowned maestros." />
+        <link rel="canonical" href="https://www.sanchaykathak.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Sanchay Kathak Nrutya Academy" />
+        <meta property="og:url" content="https://www.sanchaykathak.com/" />
+        <meta property="og:title" content="Sanchay Kathak Nrutya Academy | Pioneer Kathak Institute in Pimpri-Chinchwad" />
+        <meta property="og:description" content="Join Pimpri-Chinchwad's first Kathak academy with 35+ years of excellence. Training across Banaras, Lucknow & Jaipur Gharanas under renowned maestros." />
+        <meta property="og:image" content="https://www.sanchaykathak.com/images/2430-scaled.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sanchay Kathak Nrutya Academy | Pioneer Kathak Institute" />
+        <meta name="twitter:description" content="Pimpri-Chinchwad's first Kathak academy — 35+ years of excellence across Banaras, Lucknow & Jaipur Gharanas." />
+        <meta name="twitter:image" content="https://www.sanchaykathak.com/images/2430-scaled.jpg" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": ["EducationalOrganization", "LocalBusiness"],
+          "name": "Sanchay Kathak Nrutya Academy",
+          "alternateName": "Sanchay Kathak",
+          "url": "https://www.sanchaykathak.com",
+          "logo": "https://www.sanchaykathak.com/images/Sanchay-1.png",
+          "image": "https://www.sanchaykathak.com/images/2430-scaled.jpg",
+          "description": "Pimpri-Chinchwad's first Kathak dance academy, established in 1990. Authentic training across Banaras, Lucknow & Jaipur Gharanas.",
+          "foundingDate": "1990",
+          "telephone": "+917507234753",
+          "email": "vaishalidhongade9@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Pimpri-Chinchwad",
+            "addressRegion": "Maharashtra",
+            "addressCountry": "IN"
+          },
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+            "opens": "10:00",
+            "closes": "19:00"
+          }],
+          "priceRange": "₹₹",
+          "areaServed": "Pimpri-Chinchwad, Pune, Maharashtra"
+        })}} />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <style jsx global>{`
           @keyframes fadeInUp {
@@ -263,7 +307,7 @@ export default function Home() {
 >
   {/* Animated musical notes */}
   <div className="absolute inset-0 z-0 opacity-20">
-    {[...Array(15)].map((_, i) => (
+    {mounted && [...Array(15)].map((_, i) => (
       <div 
         key={i}
         className="absolute text-[#C73664] text-4xl opacity-0"
@@ -434,7 +478,7 @@ export default function Home() {
           <div className="relative w-full max-w-md h-40 mb-8 transform transition-all duration-700 group-hover:scale-115 group-hover:-translate-y-2">
             <div className="absolute inset-0 bg-contain bg-center bg-no-repeat z-10"
                  style={{ 
-                   backgroundImage: 'url(https://sanchaykathak.com/cms/wp-content/uploads/2025/06/Sanchay-1.png)',
+                   backgroundImage: 'url(/images/Sanchay-1.png)',
                    filter: 'drop-shadow(0 10px 20px rgba(199, 54, 100, 0.3))'
                  }}>
             </div>
@@ -1064,14 +1108,14 @@ export default function Home() {
     <div className="gallery-grid-container mt-[7px] mb-12">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
         {[
-          "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1739429006284.jpeg",
-          "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1739430044988.jpeg",
-          "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1739430747623-scaled.jpeg",
-          "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1739432659613.jpeg",
-          "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1739431559767.jpeg",
-          "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1750233481334.png",
-          "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1750233828980.png",
-          "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/1750240970773.png"
+          "/images/1739429006284.jpeg",
+          "/images/1739430044988.jpeg",
+          "/images/1739430747623-scaled.jpeg",
+          "/images/1739432659613.jpeg",
+          "/images/1739431559767.jpeg",
+          "/images/1750233481334.png",
+          "/images/1750233828980.png",
+          "/images/1750240970773.png"
         ].map((image, index) => (
           <div 
             key={index} 
@@ -1483,37 +1527,37 @@ export default function Home() {
                 { 
                   title: "Cultural Recognition Award", 
                   desc: "Prestigious honor for cultural preservation",
-                  image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20250305-WA0030.jpg"
+                  image: "/images/IMG-20250305-WA0030.jpg"
                 },
                 { 
                   title: "International Performance", 
                   desc: "Global stage recognition",
-                  image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20231007-WA0047.jpg"
+                  image: "/images/IMG-20231007-WA0047.jpg"
                 },
                 { 
                   title: "Excellence in Arts Award", 
                   desc: "Outstanding contribution to dance",
-                  image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20230412-WA0087.jpg"
+                  image: "/images/IMG-20230412-WA0087.jpg"
                 },
                 { 
                   title: "Media Coverage Feature", 
                   desc: "National television highlight",
-                  image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG_20240720_131132_031.webp"
+                  image: "/images/IMG_20240720_131132_031.webp"
                 },
                 { 
                   title: "Traditional Festival Performance", 
                   desc: "Cultural celebration showcase",
-                  image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20190903-WA0000.jpg"
+                  image: "/images/IMG-20190903-WA0000.jpg"
                 },
                 { 
                   title: "Achievement Recognition", 
                   desc: "Distinguished service award",
-                  image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG-20191005-WA0038.jpg"
+                  image: "/images/IMG-20191005-WA0038.jpg"
                 },
                 { 
                   title: "Student Success Story", 
                   desc: "Competition victory celebration",
-                  image: "https://sanchaykathak.com/cms/wp-content/uploads/2025/06/IMG_20230713_145409_280.webp"
+                  image: "/images/IMG_20230713_145409_280.webp"
                 }
               ].map((item, index) => (
                 <div 
@@ -1777,7 +1821,7 @@ export default function Home() {
   {/* Floating Elements */}
   <div className="absolute inset-0 z-0">
     {/* Musical Notes */}
-    {[...Array(20)].map((_, i) => (
+    {mounted && [...Array(20)].map((_, i) => (
       <div 
         key={i}
         className="absolute text-[#C73664] text-3xl opacity-10"
@@ -1797,7 +1841,7 @@ export default function Home() {
     <div className="absolute bottom-1/3 right-[10%] w-72 h-72 bg-gradient-to-tl from-[#00A3A3]/8 via-[#00FFF7]/10 to-transparent rounded-full blur-3xl animate-float-slow animation-delay-3000"></div>
     
     {/* Floating Sparkles */}
-    {[...Array(30)].map((_, i) => (
+    {mounted && [...Array(30)].map((_, i) => (
       <div 
         key={i}
         className="absolute rounded-full animate-ping"

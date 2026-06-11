@@ -17,6 +17,9 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [focusedField, setFocusedField] = useState('');
+  // Random decorative elements render only after mount to avoid SSR hydration mismatches
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     // Enhanced particle animation with musical notes
@@ -233,7 +236,44 @@ ${formData.message}
     <Layout>
       <Head>
         <title>Contact Us | Sanchay Kathak Academy - Connect with Dance Excellence</title>
-        <meta name="description" content="Get in touch with Sanchay Kathak Academy. Contact us for classes, workshops, performances, or collaborations. Multiple locations in Pune." />
+        <meta name="description" content="Get in touch with Sanchay Kathak Academy. Contact us for classes, workshops, performances, or collaborations. 3 locations in Pimpri-Chinchwad." />
+        <link rel="canonical" href="https://www.sanchaykathak.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Sanchay Kathak Nrutya Academy" />
+        <meta property="og:url" content="https://www.sanchaykathak.com/contact" />
+        <meta property="og:title" content="Contact Us | Sanchay Kathak Academy" />
+        <meta property="og:description" content="Get in touch for classes, workshops, or performances. 3 locations across Pimpri-Chinchwad — Chinchwad, Nigdi, and Ravet." />
+        <meta property="og:image" content="https://www.sanchaykathak.com/images/Sanchay-1.png" />
+        <meta property="og:locale" content="en_IN" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us | Sanchay Kathak Academy" />
+        <meta name="twitter:description" content="3 locations in Pimpri-Chinchwad. Call +91 7507234753 or message us for classes, workshops, and performances." />
+        <meta name="twitter:image" content="https://www.sanchaykathak.com/images/Sanchay-1.png" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "url": "https://www.sanchaykathak.com/contact",
+          "name": "Contact Sanchay Kathak Nrutya Academy",
+          "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": "Sanchay Kathak Nrutya Academy",
+            "telephone": "+917507234753",
+            "email": "vaishalidhongade9@gmail.com",
+            "url": "https://www.sanchaykathak.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Pimpri-Chinchwad",
+              "addressRegion": "Maharashtra",
+              "addressCountry": "IN"
+            },
+            "openingHoursSpecification": [{
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+              "opens": "10:00",
+              "closes": "19:00"
+            }]
+          }
+        })}} />
         <style jsx global>{`
           @keyframes shimmer {
             0% { background-position: -200% center; }
@@ -355,7 +395,7 @@ ${formData.message}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Floating Decorative Elements */}
         <div className="absolute inset-0">
-          {[...Array(12)].map((_, i) => (
+          {mounted && [...Array(12)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute floating-element"
@@ -825,7 +865,7 @@ ${formData.message}
       <section className="py-20 relative overflow-hidden bg-gradient-to-br from-[#0C1B33] to-[#2a1a4a]">
         {/* Animated Stars Background */}
         <div className="absolute inset-0">
-          {[...Array(30)].map((_, i) => (
+          {mounted && [...Array(30)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute w-1 h-1 bg-white rounded-full"
@@ -929,7 +969,7 @@ ${formData.message}
                 />
 
                 {/* Floating Particles */}
-                {[...Array(3)].map((_, i) => (
+                {mounted && [...Array(3)].map((_, i) => (
                   <motion.div
                     key={i}
                     className="absolute w-2 h-2 rounded-full opacity-60"
