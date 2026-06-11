@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import Breadcrumb from '../components/Breadcrumb';
 
 const textReviews = [
   {
@@ -58,7 +59,7 @@ export default function Reviews() {
   return (
     <Layout>
       <Head>
-        <title>Student Reviews | Sanchay Kathak Nrutya Academy</title>
+        <title>Student Reviews | Sanchay Kathak Academy</title>
         <meta name="description" content="Read what students say about Sanchay Kathak Nrutya Academy — from beginners to international performers, see how our training transforms lives." />
         <link rel="canonical" href="https://www.sanchaykathak.com/reviews" />
         <meta property="og:type" content="website" />
@@ -85,8 +86,15 @@ export default function Reviews() {
         })}} />
       </Head>
 
+      {/* Breadcrumb */}
+      <div className="pt-14 bg-[#0C1B33]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <Breadcrumb items={[{ label: 'Reviews' }]} dark={true} />
+        </div>
+      </div>
+
       {/* Hero Banner */}
-      <div className="bg-gradient-to-br from-[#0C1B33] via-[#1a2d4d] to-[#0C1B33] text-white pt-28 pb-16 px-4 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-[#0C1B33] via-[#1a2d4d] to-[#0C1B33] text-white pt-8 pb-16 px-4 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           {['♪', '♫', '♩', '♬', '♪', '♫'].map((note, i) => (
             <span

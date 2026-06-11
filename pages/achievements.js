@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import Breadcrumb from '../components/Breadcrumb';
 
 const vaishaliAwards = [
   { id: 1, title: 'Adarsh Nrutya Shikshak Puraskar', year: '2008' },
@@ -23,7 +24,7 @@ export default function Achievements() {
   return (
     <Layout>
       <Head>
-        <title>Achievements & Awards | Sanchay Kathak Nrutya Academy</title>
+        <title>Achievements & Awards | Sanchay Kathak Academy</title>
         <meta name="description" content="Awards and recognitions earned by Sanchay Kathak Nrutya Academy — Adarsh Nrutya Shikshak Puraskar, Kala Rang Puraskar, Best Choreographer 2024, and more." />
         <link rel="canonical" href="https://www.sanchaykathak.com/achievements" />
         <meta property="og:type" content="website" />
@@ -52,8 +53,13 @@ export default function Achievements() {
         })}} />
       </Head>
       
+      <div className="pt-14 bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Achievements' }]} />
+        </div>
+      </div>
       <div className="min-h-screen bg-[#FDF9F0] py-6 md:py-10 lg:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-4">
           {/* Hero Section */}
           <div className="text-center mb-16 relative">
             <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-32 h-32 bg-[#C73664]/10 rounded-full filter blur-xl opacity-70 animate-blob"></div>

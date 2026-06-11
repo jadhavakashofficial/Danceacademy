@@ -131,7 +131,7 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>Sanchay Kathak Nrutya Academy | Pioneer Kathak Institute in Pimpri-Chinchwad</title>
+        <title>Sanchay Kathak Academy | Classical Dance Classes, Pimpri-Chinchwad</title>
         <meta name="description" content="Join Pimpri-Chinchwad's first Kathak academy with 35+ years of excellence. Training across Banaras, Lucknow & Jaipur Gharanas under renowned maestros." />
         <link rel="canonical" href="https://www.sanchaykathak.com/" />
         <meta property="og:type" content="website" />
@@ -174,7 +174,6 @@ export default function Home() {
           "priceRange": "₹₹",
           "areaServed": "Pimpri-Chinchwad, Pune, Maharashtra"
         })}} />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <style jsx global>{`
           @keyframes fadeInUp {
             from {

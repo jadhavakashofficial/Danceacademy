@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Layout from '../components/Layout';
+import Breadcrumb from '../components/Breadcrumb';
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -215,7 +216,7 @@ export default function Gallery() {
   return (
     <Layout>
       <Head>
-        <title>Gallery | Sanchay Kathak Nrutya Academy</title>
+        <title>Gallery | Sanchay Kathak Academy</title>
         <meta name="description" content="Explore our stunning gallery showcasing 35 years of Kathak excellence — performances, training sessions, and cultural celebrations." />
         <link rel="canonical" href="https://www.sanchaykathak.com/gallery" />
         <meta property="og:type" content="website" />
@@ -231,8 +232,15 @@ export default function Gallery() {
         <meta name="twitter:image" content="https://www.sanchaykathak.com/images/1750241194343.png" />
       </Head>
 
+      {/* Breadcrumb */}
+      <div className="pt-14 bg-[#0C1B33]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Gallery' }]} dark={true} />
+        </div>
+      </div>
+
       {/* Hero Section */}
-      <div className="bg-gradient-to-b from-[#0C1B33] via-[#1a2d4d] to-[#0C1B33] text-white pt-28 pb-16 px-4">
+      <div className="bg-gradient-to-b from-[#0C1B33] via-[#1a2d4d] to-[#0C1B33] text-white pt-6 pb-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6">Gallery of Excellence</h1>
           <p className="text-base sm:text-xl md:text-2xl max-w-3xl mx-auto mb-10">

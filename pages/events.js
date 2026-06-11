@@ -1,5 +1,6 @@
 import Layout from '../components/Layout';
 import Head from 'next/head';
+import Breadcrumb from '../components/Breadcrumb';
 
 const recentHighlights = [
   'Thrissur Vishnumaya Devasthan, Kerala – India\'s longest dance festival',
@@ -37,7 +38,7 @@ export default function Events() {
   return (
     <Layout>
       <Head>
-        <title>Events & Performances | Sanchay Kathak Nrutya Academy</title>
+        <title>Events & Performances | Sanchay Kathak Academy</title>
         <meta name="description" content="Explore performances and events by Sanchay Kathak Nrutya Academy — from international stages in Bangkok & Europe to prestigious national festivals." />
         <link rel="canonical" href="https://www.sanchaykathak.com/events" />
         <meta property="og:type" content="website" />
@@ -53,8 +54,13 @@ export default function Events() {
         <meta name="twitter:image" content="https://www.sanchaykathak.com/images/2430-scaled.jpg" />
       </Head>
       
+      <div className="pt-14 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Events' }]} />
+        </div>
+      </div>
       <div className="min-h-screen bg-[#FDF9F0] py-6 md:py-10 lg:py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-4">
           {/* Hero Section */}
           <div className="text-center mb-16 relative">
             <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 w-32 h-32 bg-[#C73664]/10 rounded-full filter blur-xl opacity-70 animate-blob"></div>

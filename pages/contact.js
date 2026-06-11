@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import Layout from '../components/Layout';
 import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
+import Breadcrumb from '../components/Breadcrumb';
 
 export default function Contact() {
   const canvasRef = useRef(null);
@@ -235,7 +236,7 @@ ${formData.message}
   return (
     <Layout>
       <Head>
-        <title>Contact Us | Sanchay Kathak Academy - Connect with Dance Excellence</title>
+        <title>Contact Us | Sanchay Kathak Academy</title>
         <meta name="description" content="Get in touch with Sanchay Kathak Academy. Contact us for classes, workshops, performances, or collaborations. 3 locations in Pimpri-Chinchwad." />
         <link rel="canonical" href="https://www.sanchaykathak.com/contact" />
         <meta property="og:type" content="website" />
@@ -385,14 +386,22 @@ ${formData.message}
         `}</style>
       </Head>
 
-      {/* Magical Background Canvas */}
-      <canvas 
-        ref={canvasRef} 
+      {/* Background Canvas */}
+      <canvas
+        ref={canvasRef}
         className="fixed top-0 left-0 w-full h-full -z-10"
       ></canvas>
 
+      {/* Breadcrumb */}
+      <div className="pt-14 bg-white/80 backdrop-blur-sm border-b border-gray-100 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'Contact' }]} />
+        </div>
+      </div>
+
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-6">
         {/* Floating Decorative Elements */}
         <div className="absolute inset-0">
           {mounted && [...Array(12)].map((_, i) => (

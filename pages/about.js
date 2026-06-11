@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Breadcrumb from '../components/Breadcrumb';
 
 export default function About() {
   const canvasRef = useRef(null);
@@ -248,7 +249,7 @@ export default function About() {
   return (
     <Layout>
       <Head>
-        <title>About Us | Sanchay Kathak Nrutya Academy - 35 Years of Dance Excellence</title>
+        <title>About Us | Sanchay Kathak Academy</title>
         <meta name="description" content="Learn about Sanchay Kathak Academy's 35-year journey, our founders, philosophy, and commitment to preserving Kathak traditions while nurturing future artists." />
         <link rel="canonical" href="https://www.sanchaykathak.com/about" />
         <meta property="og:type" content="website" />
@@ -401,10 +402,17 @@ export default function About() {
         className="fixed top-0 left-0 w-full h-full -z-10"
       ></canvas>
 
+      {/* Breadcrumb */}
+      <div className="pt-14 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb items={[{ label: 'About' }]} />
+        </div>
+      </div>
+
       {/* Hero Section */}
-      <section 
+      <section
         id="hero"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28"
+        className="relative min-h-screen flex items-center justify-center overflow-hidden pt-10 sm:pt-14"
         style={{ 
           background: 'linear-gradient(135deg, #FDF9F0 0%, #FFF5ED 25%, #FFFCF7 50%, #FFF8F0 75%, #FDF9F0 100%)',
           backgroundSize: '400% 400%',
