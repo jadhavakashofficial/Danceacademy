@@ -33,7 +33,7 @@ export default function Contact() {
     canvas.height = window.innerHeight;
     
     const particles = [];
-    const particleCount = 120;
+    const particleCount = window.innerWidth < 768 ? 30 : 80;
     const musicNotes = ['♪', '♫', '♬', '♩', '♭', '♯'];
     
     for (let i = 0; i < particleCount; i++) {

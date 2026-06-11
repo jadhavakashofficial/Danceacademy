@@ -7,7 +7,15 @@
   "background_color": "#FDF9F0",
   "theme_color": "#C73664",
   "orientation": "portrait",
+  "categories": ["education", "entertainment"],
+  "lang": "en-IN",
   "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
     {
       "src": "/favicon.ico",
       "sizes": "48x48",
@@ -15,9 +23,27 @@
     },
     {
       "src": "/images/Sanchay-1.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/Sanchay-1.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contact Us",
+      "url": "/contact",
+      "description": "Get in touch with the academy"
+    },
+    {
+      "name": "Gallery",
+      "url": "/gallery",
+      "description": "View our performance gallery"
     }
   ]
 }

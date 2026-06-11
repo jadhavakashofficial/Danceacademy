@@ -23,7 +23,7 @@ export default function About() {
     canvas.height = window.innerHeight;
     
     const particles = [];
-    const particleCount = 100;
+    const particleCount = window.innerWidth < 768 ? 30 : 60;
     
     for (let i = 0; i < particleCount; i++) {
       particles.push({
