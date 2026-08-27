@@ -1,6 +1,9 @@
+import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import Head from 'next/head';
+import Image from 'next/image';
 import Breadcrumb from '../components/Breadcrumb';
+import { upcomingEvent, isEventUpcoming } from '../data/upcomingEvent';
 
 const recentHighlights = [
   'Thrissur Vishnumaya Devasthan, Kerala – India\'s longest dance festival',
@@ -34,7 +37,52 @@ const recordEvents = [
   'World Records Book of India – Nrutyachakra recognition'
 ];
 
-export default function Events() {
+const eventJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'DanceEvent',
+  name: upcomingEvent.title,
+  startDate: upcomingEvent.startsAt,
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  image: `https://www.sanchaykathak.com${upcomingEvent.poster}`,
+  description: `${upcomingEvent.title} presented by ${upcomingEvent.presenter}, conducted by ${upcomingEvent.conductedBy}. ${upcomingEvent.chiefGuestNote}.`,
+  location: {
+    '@type': 'Place',
+    name: upcomingEvent.venue,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Chinchwad',
+      addressRegion: 'Maharashtra',
+      addressCountry: 'IN',
+    },
+  },
+  organizer: {
+    '@type': 'Organization',
+    name: upcomingEvent.presenter,
+    url: 'https://www.sanchaykathak.com',
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'INR',
+    availability: 'https://schema.org/InStock',
+    url: 'https://www.sanchaykathak.com/events',
+  },
+};
+
+// Evaluated at build time so the section (and its Event schema) is in the static HTML.
+export function getStaticProps() {
+  return { props: { eventIsUpcoming: isEventUpcoming() } };
+}
+
+export default function Events({ eventIsUpcoming }) {
+  // Start from the build-time value so hydration matches, then re-check against
+  // the visitor's own clock in case the site hasn't been rebuilt since the event.
+  const [showUpcoming, setShowUpcoming] = useState(eventIsUpcoming);
+  useEffect(() => {
+    setShowUpcoming(isEventUpcoming());
+  }, []);
+
   return (
     <Layout>
       <Head>
@@ -52,6 +100,12 @@ export default function Events() {
         <meta name="twitter:title" content="Events & Performances | Sanchay Kathak Nrutya Academy" />
         <meta name="twitter:description" content="International tours, national festivals, and workshops by Sanchay Kathak Nrutya Academy." />
         <meta name="twitter:image" content="https://www.sanchaykathak.com/images/2430-scaled.jpg" />
+        {eventIsUpcoming && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(eventJsonLd) }}
+          />
+        )}
       </Head>
       
       <div className="pt-14 bg-white border-b border-gray-100">
@@ -75,6 +129,104 @@ export default function Events() {
               Experience the magic of Kathak through our performances, workshops, and record-breaking events
             </p>
           </div>
+
+          {/* Featured Upcoming Event */}
+          {showUpcoming && (
+            <div className="mb-16 rounded-2xl overflow-hidden shadow-2xl bg-[#120608] ring-1 ring-[#E7B84F]/25">
+              <div className="grid grid-cols-1 lg:grid-cols-5">
+                <div className="lg:col-span-2 bg-black">
+                  <Image
+                    src={upcomingEvent.poster}
+                    alt={`${upcomingEvent.title} poster — ${upcomingEvent.dateLabel} at ${upcomingEvent.venue}, ${upcomingEvent.venueArea}`}
+                    width={1303}
+                    height={1600}
+                    className="w-full h-auto object-contain"
+                    priority
+                  />
+                </div>
+
+                <div className="lg:col-span-3 p-6 sm:p-8 text-white">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[#C73664] px-3 py-1 text-[11px] font-bold uppercase tracking-wider">
+                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                    Upcoming Event
+                  </span>
+
+                  <h2 className="mt-4 text-3xl sm:text-4xl font-extrabold leading-tight">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E7B84F] to-[#C73664]">
+                      {upcomingEvent.title}
+                    </span>
+                  </h2>
+                  <p className="mt-1 text-base text-[#E7B84F]">{upcomingEvent.titleMarathi}</p>
+
+                  <p className="mt-4 text-sm sm:text-base text-gray-300">
+                    Presented by <span className="font-semibold text-white">{upcomingEvent.presenter}</span>,
+                    conducted by <span className="font-semibold text-white">{upcomingEvent.conductedBy}</span>.
+                    <br />
+                    <span className="text-gray-400">{upcomingEvent.chiefGuestNote}</span>
+                  </p>
+
+                  <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="rounded-xl bg-white/5 p-4 ring-1 ring-white/10">
+                      <p className="text-[11px] uppercase tracking-wider text-[#E7B84F] font-semibold">Date</p>
+                      <p className="mt-1 font-semibold">{upcomingEvent.dateLabel}</p>
+                    </div>
+                    <div className="rounded-xl bg-white/5 p-4 ring-1 ring-white/10">
+                      <p className="text-[11px] uppercase tracking-wider text-[#E7B84F] font-semibold">Time</p>
+                      <p className="mt-1 font-semibold">{upcomingEvent.timeLabel}</p>
+                      <p className="text-xs text-gray-400">{upcomingEvent.seatingNote}</p>
+                    </div>
+                    <div className="rounded-xl bg-white/5 p-4 ring-1 ring-white/10">
+                      <p className="text-[11px] uppercase tracking-wider text-[#E7B84F] font-semibold">Venue</p>
+                      <p className="mt-1 font-semibold">{upcomingEvent.venue}</p>
+                      <p className="text-xs text-gray-400">{upcomingEvent.venueArea}</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <p className="text-[11px] uppercase tracking-wider text-[#E7B84F] font-semibold">Chief Guests</p>
+                      <ul className="mt-2 space-y-1 text-sm text-gray-300">
+                        {upcomingEvent.guests.map((g) => (
+                          <li key={g}>{g}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="text-[11px] uppercase tracking-wider text-[#E7B84F] font-semibold">Accompanists</p>
+                      <ul className="mt-2 space-y-1 text-sm text-gray-300">
+                        {upcomingEvent.accompanists.map((a) => (
+                          <li key={a.role}>
+                            <span className="text-gray-400">{a.role}:</span> {a.name}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <p className="mt-6 inline-block rounded-lg bg-[#E7B84F]/10 px-3 py-2 text-xs text-[#E7B84F] ring-1 ring-[#E7B84F]/25">
+                    {upcomingEvent.entry} · Do come and grace the occasion with your presence 🙏
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <a
+                      href={upcomingEvent.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-[#C73664] to-[#B300B3] px-5 py-2.5 text-sm font-semibold text-white hover:opacity-90 transition-opacity"
+                    >
+                      Get Directions
+                    </a>
+                    <a
+                      href={`tel:+91${upcomingEvent.phone}`}
+                      className="inline-flex items-center justify-center rounded-lg px-5 py-2.5 text-sm font-semibold text-white ring-1 ring-white/25 hover:bg-white/10 transition-colors"
+                    >
+                      Call {upcomingEvent.phone}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Events Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">

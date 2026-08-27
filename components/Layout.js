@@ -1,6 +1,7 @@
 // components/Layout.js
 import Header from './Header'
 import Footer from './Footer'
+import EventPopup from './EventPopup'
 
 export default function Layout({ children }) {
   return (
@@ -10,6 +11,7 @@ export default function Layout({ children }) {
         {children}
       </main>
       <Footer />
+      <EventPopup />
     </div>
   )
 }
